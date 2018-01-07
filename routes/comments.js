@@ -8,7 +8,7 @@ const { isLoggedIn, checkUserComment, isAdmin } = middleware;
 //Comments New
 router.get("/new", isLoggedIn, function(req, res){
     // find campground by id
-    console.log(req.params.id);
+    //console.log(req.params.id);
     Campground.findById(req.params.id, function(err, campground){
         if(err){
             console.log(err);
@@ -33,6 +33,9 @@ router.post("/", isLoggedIn, function(req, res){
                //add username and id to comment
                comment.author.id = req.user._id;
                comment.author.username = req.user.username;
+               //console.log(campground.name)
+               comment.campaignID=campground._id;
+
                //save comment
                comment.save();
                campground.comments.push(comment);
@@ -58,7 +61,7 @@ router.put("/:commentId", isAdmin, function(req, res){
        } else {
            res.redirect("/campgrounds/" + req.params.id);
        }
-   }); 
+   });
 });
 
 router.delete("/:commentId", isLoggedIn, checkUserComment, function(req, res){
@@ -68,7 +71,7 @@ router.delete("/:commentId", isLoggedIn, checkUserComment, function(req, res){
       comments: req.comment.id
     }
   }, function(err) {
-    if(err){ 
+    if(err){
         console.log(err)
         req.flash('error', err.message);
         res.redirect('/');

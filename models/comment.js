@@ -3,7 +3,10 @@ var mongoose = require("mongoose");
 var commentSchema = mongoose.Schema({
     text: String,
     amount: Number ,
-    campaignID : Number,
+    campaignID : {
+            type: mongoose.Schema.Types.ObjectId,
+            ref:"Campground"
+          },
     createdAt: { type: Date, default: Date.now },
     author: {
         id: {

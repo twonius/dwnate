@@ -74,7 +74,8 @@ function seedDB(){
                             amount: 5,
                             author: {
                             id: "59ecef01d17ab7684953ccb7"
-                            }
+                          },
+                          campaignID: campground._id
                         }, function(err, comment){
                             if(err){
                                 console.log(err);

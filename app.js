@@ -12,6 +12,7 @@ var express     = require("express"),
     session = require("express-session"),
     seedDB      = require("./seeds"),
     methodOverride = require("method-override");
+    Middleware = require("./middleware/index.js" )
 // configure dotenv
 require('dotenv').load();
 
@@ -54,12 +55,20 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+
+// UPDATE CAMPAIGN TOALS
+
+
+
 app.use(function(req, res, next){
    res.locals.currentUser = req.user;
    res.locals.success = req.flash('success');
    res.locals.error = req.flash('error');
    next();
 });
+
+var total = Middleware.campaignTotals();
+console.log(total);
 
 
 app.use("/", indexRoutes);

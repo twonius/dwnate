@@ -1,5 +1,7 @@
 var Comment = require('../models/comment');
 var Campground = require('../models/campground');
+var mongoose    = require("mongoose");
+
 module.exports = {
   isLoggedIn: function(req, res, next){
       if(req.isAuthenticated()){
@@ -53,5 +55,14 @@ module.exports = {
       req.flash('error', 'Only images from images.unsplash.com allowed.\nSee https://youtu.be/Bn3weNRQRDE for how to copy image urls from unsplash.');
       res.redirect('back');
     }
+  },
+  campaignTotals: function(req,res,next) {
+    res.body = db.comments.aggregate([{
+        $group:
+              {
+              _id :  "$campaignID",
+              total: {$sum: "$amount"}
+              }
+              }])
   }
 }
