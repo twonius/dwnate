@@ -56,13 +56,17 @@ module.exports = {
       res.redirect('back');
     }
   },
-  campaignTotals: function(req,res,next) {
-    res.body = db.comments.aggregate([{
-        $group:
-              {
-              _id :  "$campaignID",
-              total: {$sum: "$amount"}
-              }
-              }])
+  campaignTotals: function(callback) {
+
+    // add in [] when using match
+    Comment.aggregate(
+          //{$match: { "campaignID" : req.params.id}},
+          {$group: { _id :  "$campaignID", total: {$sum: "$amount"} }}, function(err, totals){
+              callback(totals);
+            });
+
+
+    //Campground.findoneandupdate({_id : req.prams.id}, {$set:{Primary: totals.totals}});
+
   }
 }

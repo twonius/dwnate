@@ -85,6 +85,40 @@ function seedDB(){
                                 console.log("Created new comment");
                             }
                         });
+                        Comment.create(
+                           {
+                               text: "#DontEatTheBaby",
+                               amount: 6,
+                               author: {
+                               id: "5a2100ed7ba16cc86d8f287d"
+                             },
+                             campaignID: campground._id
+                           }, function(err, comment){
+                               if(err){
+                                   console.log(err);
+                               } else {
+                                   campground.comments.push(comment);
+                                   campground.save();
+                                   console.log("Created new comment");
+                               }
+                           });
+                           Comment.create(
+                              {
+                                  text: "#DontEatTheBaby",
+                                  amount: 7,
+                                  author: {
+                                  id: "5a210129ca73b7c87340117f"
+                                },
+                                campaignID: campground._id
+                              }, function(err, comment){
+                                  if(err){
+                                      console.log(err);
+                                  } else {
+                                      campground.comments.push(comment);
+                                      campground.save();
+                                      console.log("Created new comment");
+                                  }
+                              });
                 }
             });
         });

@@ -83,6 +83,10 @@ router.get("/:id", function(req, res){
             return res.redirect('/campgrounds');
         }
         //console.log(foundCampground)
+
+    //update totals
+    middleware.campaignTotals(); 
+
         //render show template with that campground
         res.render("campgrounds/show", {campground: foundCampground});
     });
