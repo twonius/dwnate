@@ -38,7 +38,7 @@ app.use(cookieParser('secret'));
 //require moment
 app.locals.moment = require('moment');
 // seedDB(); //seed the database
-//seedDB();
+seedDB();
 
 
 // PASSPORT CONFIGURATION
@@ -57,15 +57,14 @@ passport.deserializeUser(User.deserializeUser());
 
 
 // UPDATE CAMPAIGN TOALS
-//var interval = setInterval(function() {
-  Middleware.campaignTotals((Total) => {
-    Total.forEach(function(seed){
-      Campground.findByIdAndUpdate(seed._id,{ primary : seed.total}, function(err,obj){
-        console.log(obj);
-      })
-    });
-  });
-//}, 5000)
+var interval = setInterval(function() {
+  Middleware.campaignTotals()
+}, 5000)
+
+
+
+
+
 
 
 app.use(function(req, res, next){

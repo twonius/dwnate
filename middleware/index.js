@@ -55,18 +55,25 @@ module.exports = {
       req.flash('error', 'Only images from images.unsplash.com allowed.\nSee https://youtu.be/Bn3weNRQRDE for how to copy image urls from unsplash.');
       res.redirect('back');
     }
-  },
-  campaignTotals: function(callback) {
-
+  }
+  ,campaignTotals: function() {
     // add in [] when using match
     Comment.aggregate(
           //{$match: { "campaignID" : req.params.id}},
           {$group: { _id :  "$campaignID", total: {$sum: "$amount"} }}, function(err, totals){
-              callback(totals);
+
+            totals.forEach(function(seed){
+              Campground.findByIdAndUpdate(seed._id,{ primary : seed.total}, function(err,obj){
+                //console.log(obj);
+                if(err){
+                  console.log(err);
+                };
+              })
             });
+
+            })
 
 
     //Campground.findoneandupdate({_id : req.prams.id}, {$set:{Primary: totals.totals}});
-
   }
 }
