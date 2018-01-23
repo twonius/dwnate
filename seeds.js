@@ -6,51 +6,128 @@ var Comment   = require("./models/comment");
 
 var data = [
     {
-        name: "Waylon Dalton",
-        party: "whig",
+        name: "Steve King",
+        party: "Republican",
+        state: "IA",
+        chamber: "house",
+        image: "https://upload.wikimedia.org/wikipedia/commons/f/f4/Steve_King_official_photo.jpg",
+        description:"",
+        general: 0,
+        primary: 0,
+        lat: 42.4,
+        long: -71,
+        author:{
+        id: "59ecef01d17ab7684953ccb7",
+        username: "twonius" }
+    },
+    {
+        name: "Robert Menendez",
+        party: "Democrat",
+        state: "NJ",
+        chamber: "senate",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Robert_Menendez_official_photo.jpg/220px-Robert_Menendez_official_photo.jpg",
+        description: "",
+        general: 0,
+        primary: 0,
+        lat: 42.4,
+        long: -71,
+        author:{
+        id: "59ecef01d17ab7684953ccb7",
+        username: "twonius" }
+    },
+    {
+        name: "Elizabeth Warren",
+        party: "Democrat",
         state: "MA",
         chamber: "senate",
-        image: "https://www.designzzz.com/wp-content/uploads/2012/12/freestock_image_by_goldman555-d495w4s.jpg",
-        description: "I ate a baby",
-        general: 5000,
-        primary: 1000,
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Elizabeth_Warren%2C_official_portrait%2C_114th_Congress.jpg/800px-Elizabeth_Warren%2C_official_portrait%2C_114th_Congress.jpg",
+        description: "",
+        general: 0,
+        primary: 0,
         lat: 42.4,
         long: -71,
         author:{
         id: "59ecef01d17ab7684953ccb7",
         username: "twonius" }
     },
-    {
-        name: "Justine Henderson",
-        party: "bull-moose",
-        state: "OR",
-        chamber: "house",
-        image: "http://productshow.ispeboston.org/wp-content/uploads/2015/06/Example-Headshot-A1.jpg",
-        description: "Who ya gonna call",
-        general: 5000,
-        primary: 1000,
-        lat: 42.4,
-        long: -71,
-        author:{
-        id: "59ecef01d17ab7684953ccb7",
-        username: "twonius" }
-    },
-    {
-        name: "Abdullah Lang",
-        party: "whig",
-        state: "MS",
-        chamber: "house",
-        image: "https://thumbs.dreamstime.com/z/attractive-40-year-old-businessman-headshot-761108.jpg",
-        description: "Can't touch this",
-        general: 5000,
-        primary: 1000,
-        lat: 42.4,
-        long: -71,
-        author:{
-        id: "59ecef01d17ab7684953ccb7",
-        username: "twonius" }
-    }
+{
+    name: "Mitch McConnell",
+    party: "Republican",
+    state: "KY",
+    chamber: "senate",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Mitch_McConnell_portrait_2016.jpg/800px-Mitch_McConnell_portrait_2016.jpg",
+    description: "",
+    general: 0,
+    primary: 0,
+    lat: 42.4,
+    long: -71,
+    author:{
+    id: "59ecef01d17ab7684953ccb7",
+    username: "twonius" }
+},
+{
+    name: "Tom Cotton",
+    party: "Republican",
+    state: "AK",
+    chamber: "senate",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Tom_Cotton_official_Senate_photo.jpg/800px-Tom_Cotton_official_Senate_photo.jpg",
+    description: "",
+    general: 0,
+    primary: 0,
+    lat: 42.4,
+    long: -71,
+    author:{
+    id: "59ecef01d17ab7684953ccb7",
+    username: "twonius" }
+},
+{
+    name: "Nancy Pelosi",
+    party: "Democrat",
+    state: "CA",
+    chamber: "house",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Nancy_Pelosi_2012.jpg/800px-Nancy_Pelosi_2012.jpg",
+    description: "",
+    general: 0,
+    primary: 0,
+    lat: 42.4,
+    long: -71,
+    author:{
+    id: "59ecef01d17ab7684953ccb7",
+    username: "twonius" }
+},
+{
+    name: "Paul Ryan",
+    party: "Republican",
+    state: "WI",
+    chamber: "house",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Speaker_Paul_Ryan_official_photo_%28cropped_2%29.jpg/800px-Speaker_Paul_Ryan_official_photo_%28cropped_2%29.jpg",
+    description: "",
+    general: 0,
+    primary: 0,
+    lat: 42.4,
+    long: -71,
+    author:{
+    id: "59ecef01d17ab7684953ccb7",
+    username: "twonius" }
+},
+{
+    name: "Chuck Schumer",
+    party: "Democrat",
+    state: "NY",
+    chamber: "senate",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Chuck_Schumer_official_photo.jpg/800px-Chuck_Schumer_official_photo.jpg",
+    description: "",
+    general: 0,
+    primary: 0,
+    lat: 42.4,
+    long: -71,
+    author:{
+    id: "59ecef01d17ab7684953ccb7",
+    username: "twonius" }
+}
+
 ]
+
 
 function seedDB(){
    //Remove all campgrounds
@@ -70,10 +147,11 @@ function seedDB(){
 
                      Comment.create(
                         {
-                            text: "#DontEatTheBaby",
+                            text: "#Shutdown2018",
                             amount: 5,
                             author: {
-                            id: "59ecef01d17ab7684953ccb7"
+                            id: "59ecef01d17ab7684953ccb7",
+                            username: "Anton Maes"
                           },
                           campaignID: campground._id
                         }, function(err, comment){
@@ -87,10 +165,11 @@ function seedDB(){
                         });
                         Comment.create(
                            {
-                               text: "#DontEatTheBaby",
+                               text: "#RussiaGate",
                                amount: 6,
                                author: {
-                               id: "5a2100ed7ba16cc86d8f287d"
+                               id: "5a2100ed7ba16cc86d8f287d",
+                               username: "Anton Maes"
                              },
                              campaignID: campground._id
                            }, function(err, comment){
@@ -104,10 +183,11 @@ function seedDB(){
                            });
                            Comment.create(
                               {
-                                  text: "#DontEatTheBaby",
+                                  text: "#LOUDNOISES",
                                   amount: 7,
                                   author: {
-                                  id: "5a210129ca73b7c87340117f"
+                                  id: "5a210129ca73b7c87340117f",
+                                  username: "Anton Maes"
                                 },
                                 campaignID: campground._id
                               }, function(err, comment){
