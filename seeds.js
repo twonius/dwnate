@@ -133,25 +133,25 @@ var campaigns = [
 donations =
 
 [
-  {  text: "#Shutdown2018",
-    amount: 6,
-    author: {
-    id: "59ecef01d17ab7684953ccb7",
-    username: "Anton Maes"
-  }
-  //createdAt: date,
-  //campaignID: campground._id
-}
-,
-{   text: "#Shutdown2018",
-    amount: 7,
-    author: {
-             id: "59ecef01d17ab7684953ccb7",
-             username: "Anton Maes"
-            },
-   createdAt: backDate
-  //campaignID: campground._id
-}
+//   {  text: "#Shutdown2018",
+//     amount: 6,
+//     author: {
+//     id: "59ecef01d17ab7684953ccb7",
+//     username: "Anton Maes"
+//   }
+//   //createdAt: date,
+//   //campaignID: campground._id
+// }
+// ,
+// {   text: "#Shutdown2018",
+//     amount: 7,
+//     author: {
+//              id: "59ecef01d17ab7684953ccb7",
+//              username: "Anton Maes"
+//             },
+//    createdAt: backDate
+//   //campaignID: campground._id
+// }
 ];
 
 
