@@ -74,6 +74,6 @@ module.exports = {
             })
 
 
-    //Campground.findoneandupdate({_id : req.prams.id}, {$set:{Primary: totals.totals}});
+    
   }
 }

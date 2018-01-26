@@ -2,9 +2,11 @@ var mongoose = require("mongoose");
 var Campground = require("./models/campground");
 var Comment   = require("./models/comment");
 
+var date = new Date();
+var backDate = new Date();
+backDate.setDate(date.getDate()-1);
 
-
-var data = [
+var campaigns = [
     {
         name: "Steve King",
         party: "Republican",
@@ -25,7 +27,7 @@ var data = [
         party: "Democrat",
         state: "NJ",
         chamber: "senate",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Robert_Menendez_official_photo.jpg/220px-Robert_Menendez_official_photo.jpg",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Robert_Menendez_official_Senate_portrait.jpg/800px-Robert_Menendez_official_Senate_portrait.jpg",
         description: "",
         general: 0,
         primary: 0,
@@ -128,6 +130,30 @@ var data = [
 
 ]
 
+donations =
+
+[
+  {  text: "#Shutdown2018",
+    amount: 6,
+    author: {
+    id: "59ecef01d17ab7684953ccb7",
+    username: "Anton Maes"
+  }
+  //createdAt: date,
+  //campaignID: campground._id
+}
+,
+{   text: "#Shutdown2018",
+    amount: 7,
+    author: {
+             id: "59ecef01d17ab7684953ccb7",
+             username: "Anton Maes"
+            },
+   createdAt: backDate
+  //campaignID: campground._id
+}
+];
+
 
 function seedDB(){
    //Remove all campgrounds
@@ -137,7 +163,7 @@ function seedDB(){
         }
         console.log("removed campaigns!");
          //add a few campgrounds
-        data.forEach(function(seed){
+        campaigns.forEach(function(seed){
             Campground.create(seed, function(err, campground){
                 if(err){
                     console.log(err)
@@ -145,62 +171,21 @@ function seedDB(){
                     console.log("added a campaign");
                     //create a comment
 
-                     Comment.create(
-                        {
-                            text: "#Shutdown2018",
-                            amount: 5,
-                            author: {
-                            id: "59ecef01d17ab7684953ccb7",
-                            username: "Anton Maes"
-                          },
-                          campaignID: campground._id
-                        }, function(err, comment){
+                     donations.forEach(function(commentData){
+                            commentData.campaignID = campground._id
+                            Comment.create(commentData, function(err, comment){
                             if(err){
                                 console.log(err);
                             } else {
-                                campground.comments.push(comment);
+                                campground.comments.push(comment._id);
                                 campground.save();
-                                console.log("Created new comment");
+                                console.log("Created new comment: ",comment.campaignID);
                             }
+
                         });
-                        Comment.create(
-                           {
-                               text: "#RussiaGate",
-                               amount: 6,
-                               author: {
-                               id: "5a2100ed7ba16cc86d8f287d",
-                               username: "Anton Maes"
-                             },
-                             campaignID: campground._id
-                           }, function(err, comment){
-                               if(err){
-                                   console.log(err);
-                               } else {
-                                   campground.comments.push(comment);
-                                   campground.save();
-                                   console.log("Created new comment");
-                               }
-                           });
-                           Comment.create(
-                              {
-                                  text: "#LOUDNOISES",
-                                  amount: 7,
-                                  author: {
-                                  id: "5a210129ca73b7c87340117f",
-                                  username: "Anton Maes"
-                                },
-                                campaignID: campground._id
-                              }, function(err, comment){
-                                  if(err){
-                                      console.log(err);
-                                  } else {
-                                      campground.comments.push(comment);
-                                      campground.save();
-                                      console.log("Created new comment");
-                                  }
-                              });
-                }
-            });
+
+                      });
+            }});
         });
     });
     //add a few comments
