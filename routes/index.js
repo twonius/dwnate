@@ -7,7 +7,7 @@ var User = require("../models/user");
 //root route
 router.get("/", function(req, res){
     //res.render("index");
-    res.redirect("/campgrounds");
+    res.redirect("/campaigns");
 });
 
 // show register form
@@ -38,7 +38,7 @@ router.post("/register", function(req, res){
         }
         passport.authenticate("local")(req, res, function(){
            req.flash("success", "Successfully Signed Up! Nice to meet you " + req.body.username);
-           res.redirect("/campgrounds");
+           res.redirect("/campaigns");
         });
     });
 });
@@ -51,10 +51,10 @@ router.get("/login", function(req, res){
 //handling login logic
 router.post("/login", passport.authenticate("local",
     {
-        successRedirect: "/campgrounds",
+        successRedirect: "/campaigns",
         failureRedirect: "/login",
         failureFlash: true,
-        successFlash: 'Welcome to YelpCamp!'
+        successFlash: 'Welcome to Dwnate!'
     }), function(req, res){
 });
 
@@ -62,7 +62,7 @@ router.post("/login", passport.authenticate("local",
 router.get("/logout", function(req, res){
    req.logout();
    req.flash("success", "See you later!");
-   res.redirect("/campgrounds");
+   res.redirect("/campaigns");
 });
 
 

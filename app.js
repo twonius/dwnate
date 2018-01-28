@@ -6,7 +6,7 @@ var express     = require("express"),
     cookieParser = require("cookie-parser"),
     LocalStrategy = require("passport-local"),
     flash        = require("connect-flash"),
-    Campground  = require("./models/campground"),
+    Campaign  = require("./models/campaign"),
     Comment     = require("./models/comment"),
     User        = require("./models/user"),
     session = require("express-session"),
@@ -18,13 +18,13 @@ require('dotenv').load();
 
 //requiring routes
 var commentRoutes    = require("./routes/comments"),
-    campgroundRoutes = require("./routes/campgrounds"),
+    campaignRoutes = require("./routes/campaigns"),
     indexRoutes      = require("./routes/index")
 
 // assign mongoose promise library and connect to database
 mongoose.Promise = global.Promise;
 
-const databaseUri = process.env.MONGODB_URI || 'mongodb://localhost/yelp_camp';
+const databaseUri = process.env.MONGODB_URI || 'mongodb://localhost/dwnate';
 
 mongoose.connect(databaseUri, { useMongoClient: true })
       .then(() => console.log(`Database connected`))
@@ -78,8 +78,8 @@ app.use(function(req, res, next){
 
 
 app.use("/", indexRoutes);
-app.use("/campgrounds", campgroundRoutes);
-app.use("/campgrounds/:id/comments", commentRoutes);
+app.use("/campaigns", campaignRoutes);
+app.use("/campaigns/:id/comments", commentRoutes);
 
 const port = process.env.PORT || 3000;
 const ip = process.env.IP;

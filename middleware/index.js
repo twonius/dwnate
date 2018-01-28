@@ -1,5 +1,5 @@
 var Comment = require('../models/comment');
-var Campground = require('../models/campground');
+var Campaign = require('../models/campaign');
 var mongoose    = require("mongoose");
 
 module.exports = {
@@ -10,18 +10,18 @@ module.exports = {
       req.flash('error', 'You must be signed in to do that!');
       res.redirect('/login');
   },
-  checkUserCampground: function(req, res, next){
-    Campground.findById(req.params.id, function(err, foundCampground){
-      if(err || !foundCampground){
+  checkUsercampaign: function(req, res, next){
+    Campaign.findById(req.params.id, function(err, foundcampaign){
+      if(err || !foundcampaign){
           console.log(err);
-          req.flash('error', 'Sorry, that campground does not exist!');
-          res.redirect('/campgrounds');
-      } else if(foundCampground.author.id.equals(req.user._id) || req.user.isAdmin){
-          req.campground = foundCampground;
+          req.flash('error', 'Sorry, that campaign does not exist!');
+          res.redirect('/campaigns');
+      } else if(foundcampaign.author.id.equals(req.user._id) || req.user.isAdmin){
+          req.campaign = foundcampaign;
           next();
       } else {
           req.flash('error', 'You don\'t have permission to do that!');
-          res.redirect('/campgrounds/' + req.params.id);
+          res.redirect('/campaigns/' + req.params.id);
       }
     });
   },
@@ -30,13 +30,13 @@ module.exports = {
        if(err || !foundComment){
            console.log(err);
            req.flash('error', 'Sorry, that comment does not exist!');
-           res.redirect('/campgrounds');
+           res.redirect('/campaigns');
        } else if(foundComment.author.id.equals(req.user._id) || req.user.isAdmin){
             req.comment = foundComment;
             next();
        } else {
            req.flash('error', 'You don\'t have permission to do that!');
-           res.redirect('/campgrounds/' + req.params.id);
+           res.redirect('/campaigns/' + req.params.id);
        }
     });
   },
@@ -63,7 +63,7 @@ module.exports = {
           {$group: { _id :  "$campaignID", total: {$sum: "$amount"} }}, function(err, totals){
 
             totals.forEach(function(seed){
-              Campground.findByIdAndUpdate(seed._id,{ primary : seed.total}, function(err,obj){
+              Campaign.findByIdAndUpdate(seed._id,{ primary : seed.total}, function(err,obj){
                 //console.log(obj);
                 if(err){
                   console.log(err);
@@ -74,6 +74,6 @@ module.exports = {
             })
 
 
-    
+
   }
 }

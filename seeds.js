@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
-var Campground = require("./models/campground");
+var campaign = require("./models/campaign");
 var Comment   = require("./models/comment");
 
 var date = new Date();
@@ -140,7 +140,7 @@ donations =
 //     username: "Anton Maes"
 //   }
 //   //createdAt: date,
-//   //campaignID: campground._id
+//   //campaignID: campaign._id
 // }
 // ,
 // {   text: "#Shutdown2018",
@@ -150,21 +150,21 @@ donations =
 //              username: "Anton Maes"
 //             },
 //    createdAt: backDate
-//   //campaignID: campground._id
+//   //campaignID: campaign._id
 // }
 ];
 
 
 function seedDB(){
-   //Remove all campgrounds
-   Campground.remove({}, function(err){
+   //Remove all campaigns
+   campaign.remove({}, function(err){
         if(err){
             console.log(err);
         }
         console.log("removed campaigns!");
-         //add a few campgrounds
+         //add a few campaigns
         campaigns.forEach(function(seed){
-            Campground.create(seed, function(err, campground){
+            campaign.create(seed, function(err, campaign){
                 if(err){
                     console.log(err)
                 } else {
@@ -172,13 +172,13 @@ function seedDB(){
                     //create a comment
 
                      donations.forEach(function(commentData){
-                            commentData.campaignID = campground._id
+                            commentData.campaignID = campaign._id
                             Comment.create(commentData, function(err, comment){
                             if(err){
                                 console.log(err);
                             } else {
-                                campground.comments.push(comment._id);
-                                campground.save();
+                                campaign.comments.push(comment._id);
+                                campaign.save();
                                 console.log("Created new comment: ",comment.campaignID);
                             }
 

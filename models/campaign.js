@@ -1,13 +1,13 @@
 var mongoose = require("mongoose");
 
-var campgroundSchema = new mongoose.Schema({
+var campaignSchema = new mongoose.Schema({
    name: String,
    image: String,
    description: String,
    state: String,
    party: String,
    chamber: String,
-   primary: Number, 
+   primary: Number,
    lat: Number,
    long: Number,
    createdAt: { type: Date, default: Date.now },
@@ -26,4 +26,4 @@ var campgroundSchema = new mongoose.Schema({
    ]
 });
 
-module.exports = mongoose.model("campground", campgroundSchema);
+module.exports = mongoose.model("campaign", campaignSchema);

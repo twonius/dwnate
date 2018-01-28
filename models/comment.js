@@ -5,7 +5,7 @@ var commentSchema = mongoose.Schema({
     amount: Number ,
     campaignID : {
             type: mongoose.Schema.Types.ObjectId,
-            ref:"Campground"
+            ref:"campaign"
           },
     createdAt: { type: Date, default: Date.now },
     author: {
