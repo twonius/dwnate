@@ -43,6 +43,7 @@ router.post("/", isLoggedIn, function(req, res){
                console.log(comment);
                req.flash('success', 'Created a comment!');
                res.redirect('/campaigns/' + campaign._id);
+
            }
         });
        }

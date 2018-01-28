@@ -59,7 +59,7 @@ passport.deserializeUser(User.deserializeUser());
 // UPDATE CAMPAIGN TOALS
 var interval = setInterval(function() {
   Middleware.campaignTotals()
-}, 5000)
+}, 1000)
 
 
 
