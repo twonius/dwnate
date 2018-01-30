@@ -2,7 +2,7 @@
 
 <section>
   <div class="container">
-        <h1><%=campaign.name%></h1>
+        <h1><%=campaign.state%> deserves a better <%=campaign.party%> than <%=campaign.name%></h1>
         <p><%= campaign.description %></p>
   </div>
 
@@ -43,7 +43,7 @@
         </div>
       </div> -->
       <div class="row">
-        <h4 class="pull-left">-$<%= campaign.primary %> Party Primary</h4>
+        <h4 class="pull-left">$<%=campaign.primary %> </h4>
         <div class="text-right">
           <a class="btn btn-danger" href="/campaigns/<%= campaign._id %>/comments/new">DWNATE</a>
         </div>
