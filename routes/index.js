@@ -10,6 +10,11 @@ router.get("/", function(req, res){
     res.redirect("/campaigns");
 });
 
+router.get("/about_us", function(req,res){
+  res.render("about_us")
+});
+
+
 // show register form
 router.get("/register", function(req, res){
    res.render("register", {page: 'register'});

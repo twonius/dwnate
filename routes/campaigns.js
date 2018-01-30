@@ -11,6 +11,26 @@ function escapeRegex(text) {
     return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
 };
 
+//define shuffle funciton
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+};
+
 //INDEX - show all campaigns
 router.get("/", function(req, res){
   if(req.query.search && req.xhr) {
@@ -32,7 +52,7 @@ router.get("/", function(req, res){
             if(req.xhr) {
               res.json(allCampaigns);
             } else {
-              console.log('rendering index')
+              allCampaignsRand = shuffle(allCampaigns);
               res.render("campaigns/index",{Campaigns: allCampaigns, page: 'Campaigns'});
             }
          }
