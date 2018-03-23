@@ -18,21 +18,6 @@ router.get("/new", isLoggedIn, function(req, res){
     })
 });
 
-//Comments Share
-router.get("/share", isLoggedIn, function(req,res){
-
-    campaign.findById(req.params.id, function(err,campaign){
-      if(err){
-        console.log(err);
-
-      }else{
-        
-        res.render("comments/share");
-      }
-    })
-});
-
-
 //Comments Create
 router.post("/", isLoggedIn, function(req, res){
    //lookup campaign using ID
@@ -57,7 +42,7 @@ router.post("/", isLoggedIn, function(req, res){
                campaign.save();
                console.log(comment);
                req.flash('success', 'Created a comment!');
-               res.redirect('comments/share/');
+               res.redirect('/campaigns/' + campaign._id);
 
            }
         });

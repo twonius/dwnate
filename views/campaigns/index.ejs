@@ -1,33 +1,49 @@
 <% include ../partials/header %>
-
-     <header class="jumbotron">
-         <div class="container">
-             <h1><span class="glyphicon glyphicon-circle-arrow-down"></span>DWNATE</h1>
-             <p>Money talks</p>
-             <p>
-              <form action="/campaigns" method="GET" class="form-inline" id="campaign-search">
-                <div class="search-bar">
-                  <input id="search-bar" type="text" name="search" placeholder="Campaign search..." class="form-control">
-                </div>
-              </form>
-             </p>
-         </div>
-     </header>
-
-     <div class="row text-center flex-wrap" id="campaign-grid">
-        <% Campaigns.forEach(function(campaign){ %>
-            <div class="col-md-3 col-sm-6">
-                <div class="thumbnail">
-                   <img src="<%= campaign.image %>">
-                   <div class="caption">
-                       <h4><%= campaign.name %></h4>
-                   </div>
-                   <p>
-                       <a href="/campaigns/<%= campaign._id %>" class="btn btn-primary">More Info</a>
-                   </p>
+<!-- Hero -->
+<section class="hero">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-12">
+                <a class="hero-brand" href="/" title="Home"><i class="fa fa-arrow-circle-down"></i> DWNATE</a>
+            </div>
+        </div>
+        <div class="col-md-12">
+            Money talks
+            <p class="tagline">
+                <form action="/campaigns" method="GET" id="campaign-search">
+                    <div class="col-auto">
+                        <label class="sr-only" for="search">Search</label>
+                        <div class="input-group col-md-8 col-sm-10 offset-sm-1 offset-md-2 col-xs-12">
+                            <input id="search-bar" name="search" type="text" class="form-control" placeholder="Campaign search..." style="padding: 18px; font-weight: bold;">
+                        </div>
+                    </div>
+                </form>
+            </p>
+        </div>
+    </div>
+</section>
+<!-- /Hero -->
+<section class="team" id="team">
+    <div class="container">
+        <div class="row" id="campaign-grid">
+            <% Campaigns.forEach(function(campaign){ %>
+            <div class="col-sm-3 col-xs-6">
+                <div class="card card-block">
+                    <a href="/campaigns/<%= campaign._id %>">
+                    <img alt="" class="team-img" src="<%= campaign.image %>">
+                        <div class="card-title-wrap">
+                            <span class="card-title"><%= campaign.name %></span>
+                        </div>
+                        <div class="team-over">
+                            <h4 class="hidden-md-down">
+                                <a href="/campaigns/<%= campaign._id %>" class="btn btn-primary"> more info </a>
+                            </h4>
+                        </div>
+                    </a>
                 </div>
             </div>
-        <% }); %>
+            <% }); %>
+        </div>
     </div>
-
+</section>
 <% include ../partials/footer %>

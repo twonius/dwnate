@@ -1,0 +1,118 @@
+<% include ../partials/header %>
+
+<section>
+  <div class="container">
+        <h1><%=campaign.state%> deserves a better <%=campaign.party%> than <%=campaign.name%></h1>
+        <p><%= campaign.description %></p>
+  </div>
+
+</section>
+
+<section>
+  <div class="col-lg-6">
+    <div class="thumbnail">
+      <img class="img-responsive" src="<%= campaign.image %>">
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="row">
+        <h3 class="pull-left">Totals</h3>
+    </div>
+    <br/>
+     <!-- <h4>Support</h4>
+
+    <div class="row">
+        <h4 class="pull-left">$<%= campaign.general %> General Election</h4>
+        <div class="text-right">
+          <a class="btn btn-success" href="/campaigns/<%= campaign._id %>/comments/new">General</a>
+        </div>
+      </div>
+      <div class="row">
+        <h4 class="pull-left">$<%= campaign.primary %> Party Primary</h4>
+        <div class="text-right">
+          <a class="btn btn-success" href="/campaigns/<%= campaign._id %>/comments/new">Primary</a>
+        </div>
+      </div>
+      <br/> -->
+
+    <!-- <h4>DWNATE</h4> -->
+    <!-- <div class="row">
+        <h4 class="pull-left">-$<%= campaign.general %> General Election</h4>
+        <div class="text-right">
+          <a class="btn btn-danger" href="/campaigns/<%= campaign._id %>/comments/new">General</a>
+        </div>
+      </div> -->
+      <div class="row">
+        <h4 class="pull-left">$<%=campaign.primary %> </h4>
+        <div class="text-right">
+          <a class="btn btn-danger" href="/campaigns/<%= campaign._id %>/comments/new">DWNATE</a>
+        </div>
+      </div>
+
+      <div class="row">
+        <h3 class="pull-left">Info</h3>
+      </div>
+      <div class="row">
+        <h5>State: <%= campaign.state %> </h5>
+        <h5>Party: <%= campaign.party %> </h5>
+        <h5>Chamber: <%= campaign.chamber %> </h5>
+      </div>
+  </div>
+
+<!-- Add in donations plot -->
+
+
+</section>
+  </div calss="container">
+  <div clas="row">
+
+</div>
+    <h4>Dwnations</h4>
+    <div class="well">
+      <hr>
+      <% campaign.comments.forEach(function(comment){ %>
+      <div class="row">
+        <div class="col-md-12">
+          <strong><%= comment.author.username %></strong>
+          <span class="pull-right"><%= moment(comment.createdAt).fromNow() %></span>
+          <div>
+           <%= comment.text %> : -$<%= comment.amount %>
+
+          <hr>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+
+
+
+<script>
+  function initMap() {
+    var lat = <%= campaign.lat %>;
+    var lng = <%= campaign.lng %>;
+    var center = {lat: lat, lng: lng };
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 8,
+        center: center,
+        scrollwheel: false
+    });
+    var contentString = `
+      <strong><%= campaign.name %><br />
+      <%= campaign.location %></strong>
+      <p><%= campaign.description %></p>
+    `
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+    var marker = new google.maps.Marker({
+        position: center,
+        map: map
+    });
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    });
+  }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkG51lwJtDvYFKTBdRZlhzYg1D4QFsXPU&callback=initMap"></script>
+<% include ../partials/footer %>

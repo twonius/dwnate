@@ -28,8 +28,7 @@ body {
 }
 
 .thumbnail {
-	padding: 0;
-	box-shadow: 0px 3px 4px -2px #222;
+    padding: 0;
 }
 
 .thumbnail .caption-full {
@@ -56,12 +55,4 @@ body {
 #search-bar {
   height : 75px;
   font-size: 36pt;
-}
-
-
-/*  CSS BY PUJOHN */
-
-.mainheadareas{
-	background:#222!important;
-	color:#fff!important;
 }
