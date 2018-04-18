@@ -8,6 +8,8 @@ var commentSchema = mongoose.Schema({
             ref:"campaign"
           },
     createdAt: { type: Date, default: Date.now },
+    referral : { type: mongoose.Schema.Types.ObjectId,
+                 ref:"comment"},
     author: {
         id: {
             type: mongoose.Schema.Types.ObjectId,

@@ -13,20 +13,28 @@ router.get("/new", isLoggedIn, function(req, res){
         if(err){
             console.log(err);
         } else {
-             res.render("comments/new", {campaign: campaign});
+             res.render("comments/new", {campaign: campaign, referral: req.body.referral});
         }
     })
 });
 
 //Comments Share
-router.get("/share", isLoggedIn, function(req,res){
+router.get("/:commentid/share", function(req,res){
 
-    comment.findById(req.params.id, function(err,comment){
+    comment.findById(req.params.commentid, function(err,comment){
       if(err){
         console.log(err);
 
       }else{
-        res.render("comments/share", {comment: comment});
+        campaign.findById(comment.campaignID, function(err,campaign){
+          if(err){
+            console.log(err);
+          }else{
+              console.log(campaign)
+              //res.render("comments/share", {comment: comment, campaign: campaign});
+          }
+        })
+
       }
     })
 });
@@ -44,6 +52,7 @@ router.post("/", isLoggedIn, function(req, res){
            if(err){
                console.log(err);
            } else {
+
                //add username and id to comment
                comment.author.id = req.user._id;
                comment.author.username = req.user.username;
@@ -56,7 +65,7 @@ router.post("/", isLoggedIn, function(req, res){
                campaign.save();
                console.log(comment);
                req.flash('success', 'Created a comment!');
-               res.render('comments/share', {comment: comment});
+               res.render('comments/share', {comment: comment, campaign: campaign});
 
            }
         });

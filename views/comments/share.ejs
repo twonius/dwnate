@@ -1,14 +1,35 @@
 <% include ../partials/header %>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<html>
+<head>
+  <title>Your Website Title</title>
+    <!-- You can use Open Graph tags to customize link previews.
+    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+  <meta property="og:url"           content="www.dwnate.com" />
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="Dwnate" />
+  <meta property="og:description"   content="Money Talks" />
+  <meta property="og:image"         content="http://m.wsj.net/video/20120525/052512dislikefix/052512dislikefix_1280x720.jpg" />
+</head>
+<body>
   <h1 style="text-align: center"> <%= comment.author.username %> dwnated $<%=comment.amount %> </h1>
   <h2 style="text-align: center"> Share your dwnation </h2>
 
-  
 
+  <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
 
-  <meta name="twitter:card" content="Dwnate">
-  <meta name="twitter:url" content="https://davidwalsh.name/twitter-cards">
-  <meta name="twitter:title" content="How to Create a Twitter Card">
-  <meta name="twitter:description" content="Twitter's new Twitter Cards API allows developers to add META tags to their website, and Twitter will build card content from links to a given site.">
-  <meta name="twitter:image" content="https://davidwalsh.name/wp-content/themes/punky/images/logo.png">
+  <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+</body>
 
 <% include ../partials/footer %>
+</html>
