@@ -721,15 +721,17 @@ body.mobile-nav-active #mobile-nav-toggle {
 .site-footer .bottom {
   background-color: #000;
   padding: 20px 0;
+  margin-bottom: 0px;
 }
 
 .site-footer .bottom .list-inline, .site-footer .bottom p {
-  margin: 0;
+  bottom: 0;
 }
 
 .site-footer .bottom .list-inline {
   position: relative;
   top: 5px;
+  bottom: 0; 
 }
 
 .site-footer .bottom .list-inline a {
