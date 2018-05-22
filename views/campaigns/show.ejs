@@ -84,34 +84,6 @@
     </div>
   </div>
 </section>
-<script>
-var map;
-function initMap() {
-var lat = parseFloat('<%= campaign.lat %>') || 0;
-var lng = parseFloat('<%= campaign.long %>') || 0;
-var center = {lat: lat, lng: lng };
-console.log(center);
-var map = new google.maps.Map(document.getElementById('map'), {
-zoom: 8,
-center: center,
-scrollwheel: false
-});
-var contentString = `
-<strong><%= campaign.name %><br />
-<%= campaign.location %></strong>
-<p><%= campaign.description %></p>
-`
-var infowindow = new google.maps.InfoWindow({
-content: contentString
-});
-var marker = new google.maps.Marker({
-position: center,
-map: map
-});
-marker.addListener('click', function() {
-infowindow.open(map, marker);
-});
-}
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5HxR2IAiiLhXIuCQxctsKq7AVp1CaGmI&callback=initMap"></script>
+
+
 <% include ../partials/footer %>
