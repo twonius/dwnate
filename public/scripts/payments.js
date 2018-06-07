@@ -692,9 +692,9 @@
 
   // Select the default country from the config on page load.
   const countrySelector = document.getElementById('country');
-  countrySelector.querySelector(`option[value=${config.country}]`).selected =
+  countrySelector.querySelector(`option[value=${'US'}]`).selected =
     'selected';
-  countrySelector.className = `field ${config.country}`;
+  countrySelector.className = `field ${'US'}`;
 
   // Trigger the method to show relevant payment methods on page load.
   showRelevantPaymentMethods();
