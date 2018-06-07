@@ -3,6 +3,8 @@ var router  = express.Router();
 var Campaign = require("../models/campaign");
 var Comment = require("../models/comment");
 var middleware = require("../middleware");
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+
 //var geocoder = require('geocoder');
 var { isLoggedIn, checkUsercampaign, checkUserComment, isAdmin, isSafe } = middleware; // destructuring assignment
 
