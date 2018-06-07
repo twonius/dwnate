@@ -529,19 +529,19 @@
   };
 
   //const orderId = store.getActiveOrderId();
-  const mainElement = document.getElementById('main');
-  if (orderId && window.location.search.includes('source')) {
-    // Update the interface to display the processing screen.
-    mainElement.classList.add('success', 'processing');
-
-    // Poll the backend and check for an order status.
-    // The backend updates the status upon receiving webhooks,
-    // specifically the `source.chargeable` and `charge.succeeded` events.
-    //pollOrderStatus(orderId);
-  } else {
-    // Update the interface to display the checkout form.
-    mainElement.classList.add('checkout');
-  }
+  // const mainElement = document.getElementById('main');
+  // if (orderId && window.location.search.includes('source')) {
+  //   // Update the interface to display the processing screen.
+  //   mainElement.classList.add('success', 'processing');
+  //
+  //   // Poll the backend and check for an order status.
+  //   // The backend updates the status upon receiving webhooks,
+  //   // specifically the `source.chargeable` and `charge.succeeded` events.
+  //   //pollOrderStatus(orderId);
+  // } else {
+  //   // Update the interface to display the checkout form.
+  //   mainElement.classList.add('checkout');
+  // }
 
   /**
    * Display the relevant payment methods for a selected country.
