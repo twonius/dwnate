@@ -473,65 +473,65 @@
 
   // List of relevant countries for the payment methods supported in this demo.
   // Read the Stripe guide: https://stripe.com/payments/payment-methods-guide
-  const paymentMethods = {
-    ach_credit_transfer: {
-      name: 'Bank Transfer',
-      flow: 'receiver',
-      countries: ['US'],
-    },
-    alipay: {
-      name: 'Alipay',
-      flow: 'redirect',
-      countries: ['CN', 'HK', 'SG', 'JP'],
-    },
-    bancontact: {
-      name: 'Bancontact',
-      flow: 'redirect',
-      countries: ['BE'],
-    },
-    card: {
-      name: 'Card',
-      flow: 'none',
-    },
-    eps: {
-      name: 'EPS',
-      flow: 'redirect',
-      countries: ['AT'],
-    },
-    ideal: {
-      name: 'iDEAL',
-      flow: 'redirect',
-      countries: ['NL'],
-    },
-    giropay: {
-      name: 'Giropay',
-      flow: 'redirect',
-      countries: ['DE'],
-    },
-    multibanco: {
-      name: 'Multibanco',
-      flow: 'receiver',
-      countries: ['PT'],
-    },
-    sepa_debit: {
-      name: 'SEPA Direct Debit',
-      flow: 'none',
-      countries: ['FR', 'DE', 'ES', 'BE', 'NL', 'LU', 'IT', 'PT', 'AT', 'IE'],
-    },
-    sofort: {
-      name: 'SOFORT',
-      flow: 'redirect',
-      countries: ['DE', 'AT'],
-    },
-    wechat: {
-      name: 'WeChat',
-      flow: 'none',
-      countries: ['CN', 'HK', 'SG', 'JP'],
-    },
-  };
+  // const paymentMethods = {
+  //   ach_credit_transfer: {
+  //     name: 'Bank Transfer',
+  //     flow: 'receiver',
+  //     countries: ['US'],
+  //   },
+  //   alipay: {
+  //     name: 'Alipay',
+  //     flow: 'redirect',
+  //     countries: ['CN', 'HK', 'SG', 'JP'],
+  //   },
+  //   bancontact: {
+  //     name: 'Bancontact',
+  //     flow: 'redirect',
+  //     countries: ['BE'],
+  //   },
+  //   card: {
+  //     name: 'Card',
+  //     flow: 'none',
+  //   },
+  //   eps: {
+  //     name: 'EPS',
+  //     flow: 'redirect',
+  //     countries: ['AT'],
+  //   },
+  //   ideal: {
+  //     name: 'iDEAL',
+  //     flow: 'redirect',
+  //     countries: ['NL'],
+  //   },
+  //   giropay: {
+  //     name: 'Giropay',
+  //     flow: 'redirect',
+  //     countries: ['DE'],
+  //   },
+  //   multibanco: {
+  //     name: 'Multibanco',
+  //     flow: 'receiver',
+  //     countries: ['PT'],
+  //   },
+  //   sepa_debit: {
+  //     name: 'SEPA Direct Debit',
+  //     flow: 'none',
+  //     countries: ['FR', 'DE', 'ES', 'BE', 'NL', 'LU', 'IT', 'PT', 'AT', 'IE'],
+  //   },
+  //   sofort: {
+  //     name: 'SOFORT',
+  //     flow: 'redirect',
+  //     countries: ['DE', 'AT'],
+  //   },
+  //   wechat: {
+  //     name: 'WeChat',
+  //     flow: 'none',
+  //     countries: ['CN', 'HK', 'SG', 'JP'],
+  //   },
+  // };
 
   // Update the main button to reflect the payment method being selected.
-  const updateButtonLabel = (paymentMethod, bankName) => {
+/*  const updateButtonLabel = (paymentMethod, bankName) => {
     let amount = 10*100;
     let name = paymentMethods[paymentMethod].name;
     let label = `Pay ${amount}`;
@@ -612,10 +612,4 @@
         .getElementById('card-errors')
         .classList.remove('visible', payment !== 'card');
     });
-  }
-
-  // Select the default country from the config on page load.
-  const countrySelector = document.getElementById('country');
-  countrySelector.querySelector(`option[value=${'US'}]`).selected =
-    'selected';
-  countrySelector.className = `field ${'US'}`;
+  }*/
