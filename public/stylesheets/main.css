@@ -83,3 +83,12 @@ body {
 .StripeElement--webkit-autofill {
   background-color: #fefde5 !important;
 }
+
+.input-group-addon
+{
+    background-color:#FFF;
+}
+.input-group .input-group-addon + .form-control
+{
+    border-left:none;
+}
