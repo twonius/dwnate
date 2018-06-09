@@ -100,7 +100,7 @@
     currency: 'usd',
     total: {
       label: 'Total',
-      amount: 10*100,
+      amount: document.getElementById("amount").value;,
     },
     requestShipping: true,
     requestPayerEmail: true,
