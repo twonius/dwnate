@@ -17,8 +17,8 @@
   //const config = await store.getConfig();
 
   // Create references to the main form and its submit button.
-  const form = document.getElementById('payment-form');
-  const submitButton = form.querySelector('button[type=submit]');
+  // const form = document.getElementById('payment-form');
+  // const submitButton = form.querySelector('button[type=submit]');
 
   /**
    * Setup Stripe Elements.
