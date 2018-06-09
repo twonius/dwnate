@@ -56,23 +56,13 @@
    */
 
   // Create a Card Element and pass some custom styles to it.
-  const card = elements.create('card', {style});
+
 
   // Mount the Card Element on the page.
-  card.mount('#card-element');
+
 
   // Monitor change events on the Card Element to display any errors.
-  card.on('change', ({error}) => {
-    const cardErrors = document.getElementById('card-errors');
-    if (error) {
-      cardErrors.textContent = error.message;
-      cardErrors.classList.add('visible');
-    } else {
-      cardErrors.classList.remove('visible');
-    }
-    // Re-enable the Pay button.
-    submitButton.disabled = false;
-  });
+
 
   /**
    * Implement a Stripe IBAN Element that matches the look-and-feel of the app.
@@ -81,30 +71,7 @@
    */
 
   // Create a IBAN Element and pass the right options for styles and supported countries.
-  const ibanOptions = {
-    style,
-    supportedCountries: ['SEPA'],
-  };
-  const iban = elements.create('iban', ibanOptions);
 
-  // Mount the IBAN Element on the page.
-  iban.mount('#iban-element');
-
-  // Monitor change events on the IBAN Element to display any errors.
-  iban.on('change', ({error, bankName}) => {
-    const ibanErrors = document.getElementById('iban-errors');
-    if (error) {
-      ibanErrors.textContent = error.message;
-      ibanErrors.classList.add('visible');
-    } else {
-      ibanErrors.classList.remove('visible');
-      if (bankName) {
-        updateButtonLabel('sepa_debit', bankName);
-      }
-    }
-    // Re-enable the Pay button.
-    submitButton.disabled = false;
-  });
 
   /**
    * Add an iDEAL Bank selection Element that matches the look-and-feel of the app.
@@ -113,12 +80,6 @@
    */
 
   // Create a iDEAL Bank Element and pass the style options, along with an extra `padding` property.
-  const idealBank = elements.create('idealBank', {
-    style: {base: {...style.base, padding: '10px 15px'}},
-  });
-
-  // Mount the iDEAL Bank Element on the page.
-  idealBank.mount('#ideal-bank-element');
 
   /**
    * Implement a Stripe Payment Request Button Element.
@@ -215,47 +176,8 @@
    */
 
   // Listen to changes to the user-selected country.
-  form
-    .querySelector('select[name=country]')
-    .addEventListener('change', event => {
-      event.preventDefault();
-      const country = event.target.value;
-      const zipLabel = form.querySelector('label.zip');
-      // Only show the state input for the United States.
-      zipLabel.parentElement.classList.toggle('with-state', country === 'US');
-      // Update the ZIP label to make it more relevant for each country.
-      form.querySelector('label.zip span').innerText =
-        country === 'US'
-          ? 'ZIP'
-          : country === 'UK'
-            ? 'Postcode'
-            : 'Postal Code';
-      event.target.parentElement.className = `field ${country}`;
-      showRelevantPaymentMethods(country);
-    });
 
   // Submit handler for our payment form.
-  form.addEventListener('submit', async event => {
-    event.preventDefault();
-
-    // Retrieve the user information from the form.
-    const payment = form.querySelector('input[name=payment]:checked').value;
-    const name = form.querySelector('input[name=name]').value;
-    const country = form.querySelector('select[name=country] option:checked')
-      .value;
-    const email = form.querySelector('input[name=email]').value;
-    const shipping = {
-      name,
-      address: {
-        line1: form.querySelector('input[name=address]').value,
-        city: form.querySelector('input[name=city]').value,
-        postal_code: form.querySelector('input[name=postal_code]').value,
-        state: form.querySelector('input[name=state]').value,
-        country,
-      },
-    };
-    // Disable the Pay button to prevent multiple click events.
-    submitButton.disabled = true;
 
     // Create the order using the email and shipping information from the form.
     // const order = await store.createOrder(
