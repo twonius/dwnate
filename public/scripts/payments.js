@@ -622,4 +622,4 @@
 
   // Trigger the method to show relevant payment methods on page load.
   showRelevantPaymentMethods();
-})();
+)();
