@@ -147,12 +147,13 @@
 
   // Create the Payment Request Button.
   const paymentRequestButton = elements.create('paymentRequestButton', {
+    console.log('creating payment request')
     paymentRequest,
   });
 
   // Check if the Payment Request is available (or Apple Pay on the Web).
   const paymentRequestSupport = await paymentRequest.canMakePayment();
-
+  console.log('before if statement')
   if (paymentRequestSupport) {
     console.log('Can make Payment')
     // Display the Pay button by mounting the Element in the DOM.
