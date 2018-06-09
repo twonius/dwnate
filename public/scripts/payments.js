@@ -619,7 +619,3 @@
   countrySelector.querySelector(`option[value=${'US'}]`).selected =
     'selected';
   countrySelector.className = `field ${'US'}`;
-
-  // Trigger the method to show relevant payment methods on page load.
-  showRelevantPaymentMethods();
-)();
