@@ -26,6 +26,7 @@
 
   // Create a Stripe client.
   const stripe = Stripe('pk_test_VAVUbzp5BgDbYerjEq2l7j9X');
+  console.log('created stripe')
 
   // Create an instance of Elements.
   const elements = stripe.elements();
