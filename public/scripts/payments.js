@@ -9,7 +9,7 @@
  * 2. It shows how to use the Stripe Sources API to accept non-card payments,
  * such as iDEAL, SOFORT, SEPA Direct Debit, and more.
  */
-
+console.log('running payments')
 (async () => {
   'use strict';
 
