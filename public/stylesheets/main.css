@@ -87,6 +87,7 @@ body {
 .input-group-addon
 {
     background-color:#FFF;
+    font-size:12pt; 
 }
 .input-group .input-group-addon + .form-control
 {
