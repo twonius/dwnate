@@ -191,9 +191,11 @@
 
   // Check if the Payment Request is available (or Apple Pay on the Web).
   const paymentRequestSupport = await paymentRequest.canMakePayment();
+
   if (paymentRequestSupport) {
     // Display the Pay button by mounting the Element in the DOM.
     paymentRequestButton.mount('#payment-request-button');
+
     // Replace the instruction.
     document.querySelector('.instruction').innerText =
       'Or enter your shipping and payment details below';
