@@ -147,8 +147,7 @@
 
   // Create the Payment Request Button.
   const paymentRequestButton = elements.create('paymentRequestButton', {
-    console.log('creating payment request')
-    paymentRequest,
+    paymentRequest: paymentRequest,
   });
 
   // Check if the Payment Request is available (or Apple Pay on the Web).
