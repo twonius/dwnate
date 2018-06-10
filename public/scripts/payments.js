@@ -100,18 +100,11 @@
     currency: 'usd',
     total: {
       label: 'Total',
-      amount: document.getElementById("amount").value*100,
+      amount: document.getElementById("amount-box").value*100,
     },
-    requestShipping: true,
+
     requestPayerEmail: true,
-    shippingOptions: [
-      {
-        id: 'free',
-        label: 'Free Shipping',
-        detail: 'Delivery within 5 days',
-        amount: 0,
-      },
-    ],
+
   });
 
 // Code for ccard view
@@ -190,9 +183,9 @@
 
   // Check if the Payment Request is available (or Apple Pay on the Web).
   const paymentRequestSupport = await paymentRequest.canMakePayment();
-  console.log('before if statement')
+
   if (paymentRequestSupport) {
-    console.log('Can make Payment')
+
     // Display the Pay button by mounting the Element in the DOM.
     paymentRequestButton.mount('#payment-request-button');
 
