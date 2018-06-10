@@ -107,9 +107,27 @@
 
   });
 
+  var style_card = {
+    base: {
+      color: '#32325d',
+      lineHeight: '18px',
+      fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+      fontSmoothing: 'antialiased',
+      fontSize: '16px',
+      '::placeholder': {
+        color: '#aab7c4'
+      }
+    },
+    invalid: {
+      color: '#fa755a',
+      iconColor: '#fa755a'
+    }
+  };
+
+
 // Code for ccard view
   // Create an instance of the card Element.
-  var card = elements.create('card', {style: style});
+  var card = elements.create('card', {style: style_card});
 
   // Add an instance of the card Element into the `card-element` <div>.
   card.mount('#card-element');
