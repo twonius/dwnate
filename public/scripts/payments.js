@@ -187,7 +187,7 @@
   if (paymentRequestSupport) {
 
     // Display the Pay button by mounting the Element in the DOM.
-  //  paymentRequestButton.mount('#payment-request-button');
+    paymentRequestButton.mount('#payment-request-button');
 
     // Show the payment request section.
     document.getElementById('payment-request').classList.add('visible');
