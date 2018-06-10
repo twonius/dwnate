@@ -109,7 +109,7 @@
 
 // Code for ccard view
   // Create an instance of the card Element.
-  //var card = elements.create('card', {style: style});
+  var card = elements.create('card', {style: style});
 
   // Add an instance of the card Element into the `card-element` <div>.
   card.mount('#card-element');
@@ -368,10 +368,10 @@
 
 
    // Create an instance of the card Element.
-   var card = elements.create('card', {style: style});
+   //var card = elements.create('card', {style: style});
 
    // Add an instance of the card Element into the `card-element` <div>.
-   card.mount('#card-element');
+   //card.mount('#card-element');
 
    // Handle real-time validation errors from the card Element.
    card.addEventListener('change', function(event) {
