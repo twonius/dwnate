@@ -81,6 +81,7 @@ section {
   border: 0;
   border-radius: 6px;
   margin: 8px;
+  object-fit: cover
   overflow: hidden;
 }
 
@@ -731,7 +732,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 .site-footer .bottom .list-inline {
   position: relative;
   top: 5px;
-  bottom: 0; 
+  bottom: 0;
 }
 
 .site-footer .bottom .list-inline a {
