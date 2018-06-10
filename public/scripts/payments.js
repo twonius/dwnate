@@ -109,7 +109,7 @@
 
 // Code for ccard view
   // Create an instance of the card Element.
-  var card = elements.create('card', {style: style});
+  //var card = elements.create('card', {style: style});
 
   // Add an instance of the card Element into the `card-element` <div>.
   card.mount('#card-element');
@@ -365,7 +365,7 @@
 
    // Custom styling can be passed to options when creating an Element.
    // (Note that this demo uses a wider set of styles than the guide below.)
-  
+
 
    // Create an instance of the card Element.
    var card = elements.create('card', {style: style});
