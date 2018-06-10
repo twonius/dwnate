@@ -531,6 +531,8 @@ body.mobile-nav-active #mobile-nav-toggle {
   height: 300px;
   vertical-align: middle;
   -ms-interpolation-mode: bicubic;
+  object-fit: cover;
+  overflow: hidden;
 }
 
 .team .card .social-nav {
@@ -554,8 +556,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .team .card .card-title-wrap {
   background-color: #199EB8;
-  object-fit: cover;
-  overflow: hidden;
+
 }
 
 .team .card .card-title-wrap .card-title, .team .card:hover .card-title-wrap .card-text {
