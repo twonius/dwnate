@@ -87,9 +87,16 @@ body {
 .input-group-addon
 {
     background-color:#FFF;
-    font-size:12pt; 
+    font-size:12pt;
 }
 .input-group .input-group-addon + .form-control
 {
     border-left:none;
+}
+
+#payment-form {
+  margin: 0 -30px;
+  padding: 20px 30px 30px;
+  border-radius: 4px;
+  border: 1px solid #e8e8fb;
 }
