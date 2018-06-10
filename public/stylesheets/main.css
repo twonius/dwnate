@@ -97,10 +97,12 @@ body {
 #payment-form {
   margin: 0;
   padding: 0 15px;
+  width: 100%;
   border-width: 2px 0 0 0;
   border-radius: 0;
 }
 
 #card-element {
   margin-top: -1px;
+  width: 100%;
 }
