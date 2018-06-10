@@ -25,10 +25,12 @@ body {
 /* Thumbnail styles */
 .thumbnail img {
     width: 100%;
+    object-fit: cover;
 }
 
 .thumbnail {
     padding: 0;
+    object-fit: cover;
 }
 
 .thumbnail .caption-full {
