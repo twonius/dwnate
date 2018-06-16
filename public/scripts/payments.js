@@ -216,7 +216,7 @@
 
 
 
-  Handle the order and source activation if required
+  //Handle the order and source activation if required
   const handleOrder = async (order, source, error = null) => {
     const mainElement = document.getElementById('main');
     const confirmationElement = document.getElementById('confirmation');
