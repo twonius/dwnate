@@ -216,171 +216,171 @@
 
 
 
-  // Handle the order and source activation if required
-  // const handleOrder = async (order, source, error = null) => {
-  //   const mainElement = document.getElementById('main');
-  //   const confirmationElement = document.getElementById('confirmation');
-  //   if (error) {
-  //     mainElement.classList.remove('processing');
-  //     mainElement.classList.remove('receiver');
-  //     confirmationElement.querySelector('.error-message').innerText =
-  //       error.message;
-  //     mainElement.classList.add('error');
-  //   }
-  //   switch (order.metadata.status) {
-  //     case 'created':
-  //       switch (source.status) {
-  //         case 'chargeable':
-  //           submitButton.textContent = 'Processing Payment…';
-  //           const response = await store.payOrder(order, source);
-  //           await handleOrder(response.order, response.source);
-  //           break;
-  //         case 'pending':
-  //           switch (source.flow) {
-  //             case 'none':
-  //               // Normally, sources with a `flow` value of `none` are chargeable right away,
-  //               // but there are exceptions, for instance for WeChat QR codes just below.
-  //               if (source.type === 'wechat') {
-  //                 // Display the QR code.
-  //                 const qrCode = new QRCode('wechat-qrcode', {
-  //                   text: source.wechat.qr_code_url,
-  //                   width: 128,
-  //                   height: 128,
-  //                   colorDark: '#424770',
-  //                   colorLight: '#f8fbfd',
-  //                   correctLevel: QRCode.CorrectLevel.H,
-  //                 });
-  //                 // Hide the previous text and update the call to action.
-  //                 form.querySelector('.payment-info.wechat p').style.display =
-  //                   'none';
-  //                 let amount = store.formatPrice(
-  //                   store.getOrderTotal(),
-  //                   config.currency
-  //                 );
-  //                 submitButton.textContent = `Scan this QR code on WeChat to pay ${amount}`;
-  //                 // Start polling the order status.
-  //                 pollOrderStatus(order.id, 300000);
-  //               } else {
-  //                 console.log('Unhandled none flow.', source);
-  //               }
-  //               break;
-  //             case 'redirect':
-  //               // Immediately redirect the customer.
-  //               submitButton.textContent = 'Redirecting…';
-  //               window.location.replace(source.redirect.url);
-  //               break;
-  //             case 'code_verification':
-  //               // Display a code verification input to verify the source.
-  //               break;
-  //             case 'receiver':
-  //               // Display the receiver address to send the funds to.
-  //               mainElement.classList.add('success', 'receiver');
-  //               const receiverInfo = confirmationElement.querySelector(
-  //                 '.receiver .info'
-  //               );
-  //               let amount = store.formatPrice(source.amount, config.currency);
-  //               switch (source.type) {
-  //                 case 'ach_credit_transfer':
-  //                   // Display the ACH Bank Transfer information to the user.
-  //                   const ach = source.ach_credit_transfer;
-  //                   receiverInfo.innerHTML = `
-  //                     <ul>
-  //                       <li>
-  //                         Amount:
-  //                         <strong>${amount}</strong>
-  //                       </li>
-  //                       <li>
-  //                         Bank Name:
-  //                         <strong>${ach.bank_name}</strong>
-  //                       </li>
-  //                       <li>
-  //                         Account Number:
-  //                         <strong>${ach.account_number}</strong>
-  //                       </li>
-  //                       <li>
-  //                         Routing Number:
-  //                         <strong>${ach.routing_number}</strong>
-  //                       </li>
-  //                     </ul>`;
-  //                   break;
-  //                 case 'multibanco':
-  //                   // Display the Multibanco payment information to the user.
-  //                   const multibanco = source.multibanco;
-  //                   receiverInfo.innerHTML = `
-  //                     <ul>
-  //                       <li>
-  //                         Amount (Montante):
-  //                         <strong>${amount}</strong>
-  //                       </li>
-  //                       <li>
-  //                         Entity (Entidade):
-  //                         <strong>${multibanco.entity}</strong>
-  //                       </li>
-  //                       <li>
-  //                         Reference (Referencia):
-  //                         <strong>${multibanco.reference}</strong>
-  //                       </li>
-  //                     </ul>`;
-  //                   break;
-  //                 default:
-  //                   console.log('Unhandled receiver flow.', source);
-  //               }
-  //               // Poll the backend and check for an order status.
-  //               // The backend updates the status upon receiving webhooks,
-  //               // specifically the `source.chargeable` and `charge.succeeded` events.
-  //               pollOrderStatus(order.id);
-  //               break;
-  //             default:
-  //               // Order is received, pending payment confirmation.
-  //               break;
-  //           }
-  //           break;
-  //         case 'failed':
-  //         case 'canceled':
-  //           // Authentication failed, offer to select another payment method.
-  //           break;
-  //         default:
-  //           // Order is received, pending payment confirmation.
-  //           break;
-  //       }
-  //       break;
-  //
-  //     case 'pending':
-  //       // Success! Now waiting for payment confirmation. Update the interface to display the confirmation screen.
-  //       mainElement.classList.remove('processing');
-  //       // Update the note about receipt and shipping (the payment is not yet confirmed by the bank).
-  //       confirmationElement.querySelector('.note').innerText =
-  //         'We’ll send your receipt and ship your items as soon as your payment is confirmed.';
-  //       mainElement.classList.add('success');
-  //       break;
-  //
-  //     case 'failed':
-  //       // Payment for the order has failed.
-  //       mainElement.classList.remove('success');
-  //       mainElement.classList.remove('processing');
-  //       mainElement.classList.remove('receiver');
-  //       mainElement.classList.add('error');
-  //       break;
-  //
-  //     case 'paid':
-  //       // Success! Payment is confirmed. Update the interface to display the confirmation screen.
-  //       mainElement.classList.remove('processing');
-  //       mainElement.classList.remove('receiver');
-  //       // Update the note about receipt and shipping (the payment has been fully confirmed by the bank).
-  //       confirmationElement.querySelector('.note').innerText =
-  //         'We just sent your receipt to your email address, and your items will be on their way shortly.';
-  //       mainElement.classList.add('success');
-  //       break;
-  //   }
-  // };
+  Handle the order and source activation if required
+  const handleOrder = async (order, source, error = null) => {
+    const mainElement = document.getElementById('main');
+    const confirmationElement = document.getElementById('confirmation');
+    if (error) {
+      mainElement.classList.remove('processing');
+      mainElement.classList.remove('receiver');
+      confirmationElement.querySelector('.error-message').innerText =
+        error.message;
+      mainElement.classList.add('error');
+    }
+    switch (order.metadata.status) {
+      case 'created':
+        switch (source.status) {
+          case 'chargeable':
+            submitButton.textContent = 'Processing Payment…';
+            const response = await store.payOrder(order, source);
+            await handleOrder(response.order, response.source);
+            break;
+          case 'pending':
+            switch (source.flow) {
+              case 'none':
+                // Normally, sources with a `flow` value of `none` are chargeable right away,
+                // but there are exceptions, for instance for WeChat QR codes just below.
+                if (source.type === 'wechat') {
+                  // Display the QR code.
+                  const qrCode = new QRCode('wechat-qrcode', {
+                    text: source.wechat.qr_code_url,
+                    width: 128,
+                    height: 128,
+                    colorDark: '#424770',
+                    colorLight: '#f8fbfd',
+                    correctLevel: QRCode.CorrectLevel.H,
+                  });
+                  // Hide the previous text and update the call to action.
+                  form.querySelector('.payment-info.wechat p').style.display =
+                    'none';
+                  let amount = store.formatPrice(
+                    store.getOrderTotal(),
+                    config.currency
+                  );
+                  submitButton.textContent = `Scan this QR code on WeChat to pay ${amount}`;
+                  // Start polling the order status.
+                  pollOrderStatus(order.id, 300000);
+                } else {
+                  console.log('Unhandled none flow.', source);
+                }
+                break;
+              case 'redirect':
+                // Immediately redirect the customer.
+                submitButton.textContent = 'Redirecting…';
+                window.location.replace(source.redirect.url);
+                break;
+              case 'code_verification':
+                // Display a code verification input to verify the source.
+                break;
+              case 'receiver':
+                // Display the receiver address to send the funds to.
+                mainElement.classList.add('success', 'receiver');
+                const receiverInfo = confirmationElement.querySelector(
+                  '.receiver .info'
+                );
+                let amount = store.formatPrice(source.amount, config.currency);
+                switch (source.type) {
+                  case 'ach_credit_transfer':
+                    // Display the ACH Bank Transfer information to the user.
+                    const ach = source.ach_credit_transfer;
+                    receiverInfo.innerHTML = `
+                      <ul>
+                        <li>
+                          Amount:
+                          <strong>${amount}</strong>
+                        </li>
+                        <li>
+                          Bank Name:
+                          <strong>${ach.bank_name}</strong>
+                        </li>
+                        <li>
+                          Account Number:
+                          <strong>${ach.account_number}</strong>
+                        </li>
+                        <li>
+                          Routing Number:
+                          <strong>${ach.routing_number}</strong>
+                        </li>
+                      </ul>`;
+                    break;
+                  case 'multibanco':
+                    // Display the Multibanco payment information to the user.
+                    const multibanco = source.multibanco;
+                    receiverInfo.innerHTML = `
+                      <ul>
+                        <li>
+                          Amount (Montante):
+                          <strong>${amount}</strong>
+                        </li>
+                        <li>
+                          Entity (Entidade):
+                          <strong>${multibanco.entity}</strong>
+                        </li>
+                        <li>
+                          Reference (Referencia):
+                          <strong>${multibanco.reference}</strong>
+                        </li>
+                      </ul>`;
+                    break;
+                  default:
+                    console.log('Unhandled receiver flow.', source);
+                }
+                // Poll the backend and check for an order status.
+                // The backend updates the status upon receiving webhooks,
+                // specifically the `source.chargeable` and `charge.succeeded` events.
+                pollOrderStatus(order.id);
+                break;
+              default:
+                // Order is received, pending payment confirmation.
+                break;
+            }
+            break;
+          case 'failed':
+          case 'canceled':
+            // Authentication failed, offer to select another payment method.
+            break;
+          default:
+            // Order is received, pending payment confirmation.
+            break;
+        }
+        break;
 
-  /**
-   * Monitor the status of a source after a redirect flow.
-   *
-   * This means there is a `source` parameter in the URL, and an active order.
-   * When this happens, we'll monitor the status of the order and present real-time
-   * information to the user.
-   */
+      case 'pending':
+        // Success! Now waiting for payment confirmation. Update the interface to display the confirmation screen.
+        mainElement.classList.remove('processing');
+        // Update the note about receipt and shipping (the payment is not yet confirmed by the bank).
+        confirmationElement.querySelector('.note').innerText =
+          'We’ll send your receipt and ship your items as soon as your payment is confirmed.';
+        mainElement.classList.add('success');
+        break;
+
+      case 'failed':
+        // Payment for the order has failed.
+        mainElement.classList.remove('success');
+        mainElement.classList.remove('processing');
+        mainElement.classList.remove('receiver');
+        mainElement.classList.add('error');
+        break;
+
+      case 'paid':
+        // Success! Payment is confirmed. Update the interface to display the confirmation screen.
+        mainElement.classList.remove('processing');
+        mainElement.classList.remove('receiver');
+        // Update the note about receipt and shipping (the payment has been fully confirmed by the bank).
+        confirmationElement.querySelector('.note').innerText =
+          'We just sent your receipt to your email address, and your items will be on their way shortly.';
+        mainElement.classList.add('success');
+        break;
+    }
+  };
+
+   /**
+  //  * Monitor the status of a source after a redirect flow.
+  //  *
+  //  * This means there is a `source` parameter in the URL, and an active order.
+  //  * When this happens, we'll monitor the status of the order and present real-time
+  //  * information to the user.
+  //  */
 
    // Custom styling can be passed to options when creating an Element.
    // (Note that this demo uses a wider set of styles than the guide below.)

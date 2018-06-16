@@ -59,7 +59,7 @@
               <div id="payment-request-button"></div>
             </div>
 
-        <form action="/charge" method="post" id="payment-form" style="width:100%">
+        <form action="/campaigns/<%= campaign._id %>/comments/new" method="post" id="payment-form" style="width:100%">
           <fieldset>
             <label>
               <span>Card</span>
@@ -101,4 +101,5 @@
 
 <script src="https://js.stripe.com/v3/"></script>
 <script src="/scripts/payments.js"></script>
+<script src="/scripts/store.js"></script> 
 <% include ../partials/footer %>
