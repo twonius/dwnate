@@ -199,6 +199,7 @@
       event.complete('success');
     } catch (error) {
       event.complete('fail');
+      console.log(error)
     }
   });
 
@@ -373,7 +374,7 @@
         mainElement.classList.remove('processing');
         mainElement.classList.remove('receiver');
         mainElement.classList.add('error');
-        
+
         break;
 
       case 'paid':
