@@ -182,4 +182,4 @@ class Store {
   // }
 }
 
-//window.store = new Store();
+window.store = new Store();
