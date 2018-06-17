@@ -153,6 +153,7 @@
         // Inform the user if there was an error.
         var errorElement = document.getElementById('card-errors');
         errorElement.textContent = result.error.message;
+        console.log(errorElement.textContent)
       } else {
         // Send the token to your server.
         stripeTokenHandler(result.token);
@@ -237,6 +238,7 @@
       confirmationElement.querySelector('.error-message').innerText =
         error.message;
       mainElement.classList.add('error');
+      console.log(error.message)
     }
     switch (order.metadata.status) {
       case 'created':
@@ -371,6 +373,7 @@
         mainElement.classList.remove('processing');
         mainElement.classList.remove('receiver');
         mainElement.classList.add('error');
+        
         break;
 
       case 'paid':
