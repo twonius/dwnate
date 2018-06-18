@@ -180,7 +180,7 @@
     try {
       // Create the order using the email and shipping information from the Payment Request callback.
       const order = await store.createOrder(
-        config.currency,
+        'usd',
         store.getOrderItems(),
         event.payerEmail,
         {
@@ -269,7 +269,7 @@
                     'none';
                   let amount = store.formatPrice(
                     store.getOrderTotal(),
-                    config.currency
+                    'usd'
                   );
                   submitButton.textContent = `Scan this QR code on WeChat to pay ${amount}`;
                   // Start polling the order status.
@@ -292,7 +292,7 @@
                 const receiverInfo = confirmationElement.querySelector(
                   '.receiver .info'
                 );
-                let amount = store.formatPrice(source.amount, config.currency);
+                let amount = store.formatPrice(source.amount, 'usd');
                 switch (source.type) {
                   case 'ach_credit_transfer':
                     // Display the ACH Bank Transfer information to the user.
