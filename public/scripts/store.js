@@ -60,7 +60,7 @@ class Store {
   }
 
   // Create an order object to represent the line items.
-  async createOrder(currency, items, email, shipping) {
+  async createOrder(currency, items, email) {
     try {
       const response = await fetch('/orders', {
         method: 'POST',
@@ -68,8 +68,7 @@ class Store {
         body: JSON.stringify({
           currency,
           items,
-          email,
-          shipping,
+          user
         }),
       });
       const data = await response.json();
