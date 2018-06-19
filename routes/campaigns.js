@@ -163,7 +163,7 @@ router.delete("/:id", isLoggedIn, checkUsercampaign, function(req, res) {
     })
 });
 
-rotuer.get('/api/user_data', function(req, res) {
+router.get('/api/user_data', function(req, res) {
 
     if (req.user === undefined) {
         // The user is not logged in
