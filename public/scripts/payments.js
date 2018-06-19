@@ -188,7 +188,7 @@
       const order = await store.createOrder(
         'usd',
         store.getOrderItems(),
-          store.getUserID()
+         'twonius' //store.getUserID()
 
       );
       console.log(order);
