@@ -42,8 +42,10 @@ class Store {
         $.getJSON("api/user_data", function(data) {
             // Make sure the data contains the username as expected before using it
             if (data.hasOwnProperty('username')) {
+                console.log(data.username)
                 return data.username;
             }
+
         });
 
     }
@@ -71,15 +73,14 @@ class Store {
   }
 
   // Create an order object to represent the line items.
-  async createOrder(currency, items, email) {
+  async createOrder(currency, id) {
     try {
       const response = await fetch('/orders', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
           currency,
-          items,
-          user
+          id
         }),
       });
       const data = await response.json();
