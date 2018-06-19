@@ -37,6 +37,17 @@ class Store {
     return items;
   }
 
+  getUserID(){
+
+        $.getJSON("api/user_data", function(data) {
+            // Make sure the data contains the username as expected before using it
+            if (data.hasOwnProperty('username')) {
+                return data.username;
+            }
+        });
+
+    }
+
   // Retrieve the configuration from the API.
   async getConfig() {
     try {
@@ -134,6 +145,8 @@ class Store {
   getActiveOrderId() {
     return localStorage.getItem('orderId');
   }
+
+
 
   // Manipulate the DOM to display the order summary on the right panel.
   // Note: For simplicity, we're just using template strings to inject data in the DOM,
