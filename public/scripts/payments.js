@@ -187,8 +187,7 @@
       // Create the order using the email and shipping information from the Payment Request callback.
       const order = await store.createOrder(
         'usd',
-        store.getOrderItems(),
-         'twonius' //store.getUserID()
+        'twonius' //store.getUserID()
 
       );
       console.log(order);
