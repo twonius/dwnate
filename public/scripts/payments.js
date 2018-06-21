@@ -185,9 +185,9 @@
   paymentRequest.on('source', async event => {
     try {
       // Create the order using the email and shipping information from the Payment Request callback.
-      const order = await store.createOrder(
-        'usd',
-        'twonius' //store.getUserID()
+      console.log(event);
+        const order = await store.createOrder(
+        window.location.pathname.split('/').slice(-1),
 
       );
       console.log(order);

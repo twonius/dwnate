@@ -73,14 +73,15 @@ class Store {
   }
 
   // Create an order object to represent the line items.
-  async createOrder(currency, id) {
+  async createOrder(campaign_id,amount) {
     try {
-      const response = await fetch('/orders', {
+      const response = await fetch(('/campaigns/'+campaign_id+'/comments'), {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
-          currency,
-          id
+          amount: amount
+
+
         }),
       });
       const data = await response.json();
