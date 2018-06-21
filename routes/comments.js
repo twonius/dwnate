@@ -58,7 +58,7 @@ router.post("/", isLoggedIn, function(req, res){
                comment.author.username = req.user.username;
                //console.log(campaign.name)
                comment.campaignID=campaign._id;
-
+               comment.amount = req.body.amount;
                //save comment
                comment.save();
                campaign.comments.push(comment);
