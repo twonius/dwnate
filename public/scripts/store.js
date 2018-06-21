@@ -75,7 +75,7 @@ class Store {
   // Create an order object to represent the line items.
   async createOrder(campaign_id,amount) {
     try {
-      const response = await fetch(('/campaigns/'+campaign_id), {
+      const response = await fetch(('/campaigns/'+campaign_id+'/comments/'), {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
