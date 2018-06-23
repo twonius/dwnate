@@ -76,5 +76,12 @@ module.exports = {
             })
 
 
-  }
+  },
+    getUser: function() {
+
+
+
+
+
+    }
 }

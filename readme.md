@@ -1,4 +1,5 @@
-# YelpCamp
+# Dwnate Notes
 
-### Refactored by Ian Schoonover
-# dwnate
+To launch mongodb locally:
+./mongod --dbpath ~/mongo-data
+

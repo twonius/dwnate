@@ -59,13 +59,17 @@ router.post("/", isLoggedIn, function(req, res){
                //console.log(campaign.name)
                comment.campaignID=campaign._id;
                comment.amount = req.body.amount;
+               comment.metadata = {
+                   status: 'created',
+               }
                //save comment
                comment.save();
                campaign.comments.push(comment);
                campaign.save();
                console.log(comment);
                req.flash('success', 'Created a comment!');
-               res.render('comments/share', {comment: comment, campaign: campaign});
+
+               //res.render('comments/share', {comment: comment, campaign: campaign});
 
            }
         });
