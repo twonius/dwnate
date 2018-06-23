@@ -42,9 +42,9 @@ router.get("/:commentid/share", function(req,res){
 
 
 //Comments Create
-router.post("/", isLoggedIn,async function(req, res){
+router.post("/", isLoggedIn,function(req, res){
    //lookup campaign using ID
-   campaign.findById(req.params.id, async function(err, campaign){
+   campaign.findById(req.params.id, function(err, campaign){
        if(err){
            console.log(err);
            res.redirect("/campaigns");
@@ -63,7 +63,7 @@ router.post("/", isLoggedIn,async function(req, res){
                comment.amount = req.body.amount;
                comment.metadata = {
                    status: 'created',
-               }
+               };
                //save comment
                comment.save();
                campaign.comments.push(comment);
