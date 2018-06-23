@@ -42,15 +42,15 @@ router.get("/:commentid/share", function(req,res){
 
 
 //Comments Create
-router.post("/", isLoggedIn, function(req, res){
+router.post("/", isLoggedIn,async function(req, res){
    //lookup campaign using ID
-   campaign.findById(req.params.id, function(err, campaign){
+   campaign.findById(req.params.id, async function(err, campaign){
        if(err){
            console.log(err);
            res.redirect("/campaigns");
        } else {
 
-        Comment.create(req.body.comment, async function(err, comment){
+        Comment.create(req.body.comment,async function(err, comment){
            if(err){
                console.log(err);
            } else {
