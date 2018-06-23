@@ -3,7 +3,7 @@ const router  = express.Router({mergeParams: true});
 const campaign = require("../models/campaign");
 const Comment = require("../models/comment");
 const middleware = require("../middleware");
-const {orders, products} = require('./inventory');
+const {orders, products} = require('../middleware/inventory');
 const { isLoggedIn, checkUserComment, isAdmin } = middleware;
 
 //Comments New
@@ -50,7 +50,7 @@ router.post("/", isLoggedIn, function(req, res){
            res.redirect("/campaigns");
        } else {
 
-        Comment.create(req.body.comment, function(err, comment){
+        Comment.create(req.body.comment, async function(err, comment){
            if(err){
                console.log(err);
            } else {
@@ -72,8 +72,12 @@ router.post("/", isLoggedIn, function(req, res){
                req.flash('success', 'Created a comment!');
 
                //res.render('comments/share', {comment: comment, campaign: campaign});
-               let order = await orders.create('usd', comment.campaignID, comment.ahtor.username);
-               return res.status(200).json({order});
+               try {
+                   let order = await orders.create('usd', comment.campaignID, comment.author.username);
+                   return res.status(200).json({order});
+                   } catch (err) {
+                   return res.status(500).json({error: err.message});
+               }
            }
         });
        }
