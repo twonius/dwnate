@@ -44,6 +44,7 @@ router.get("/:commentid/share", function(req,res){
 //Comments Create
 router.post("/", isLoggedIn,function(req, res){
    //lookup campaign using ID
+    console.log(req.params.id);
    campaign.findById(req.params.id, function(err, campaign){
        if(err){
            console.log(err);
