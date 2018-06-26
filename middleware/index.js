@@ -4,8 +4,8 @@ var mongoose    = require("mongoose");
 
 module.exports = {
   isLoggedIn: function(req, res, next){
-      console.log('TEST MODE')
-      //if(req.isAuthenticated()){
+
+      if(req.isAuthenticated()){
       if(true){
           return next();
       }

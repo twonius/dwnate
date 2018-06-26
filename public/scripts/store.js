@@ -80,8 +80,6 @@ class Store {
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
           amount: amount
-
-
         }),
       });
       const data = await response.json();
