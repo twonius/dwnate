@@ -6,7 +6,6 @@ module.exports = {
   isLoggedIn: function(req, res, next){
 
       if(req.isAuthenticated()){
-      if(true){
           return next();
       }
       req.flash('error', 'You must be signed in to do that!');
