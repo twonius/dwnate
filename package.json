@@ -4,7 +4,7 @@
   "engines": {
     "node": "8.11.3"
   },
-  "description": "YelpCamp v1",
+  "description": "Dwnate",
   "main": "app.js",
   "scripts": {
     "start": "node app",
