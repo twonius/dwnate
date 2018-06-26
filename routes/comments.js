@@ -1,8 +1,8 @@
 const express = require("express");
 const router  = express.Router({mergeParams: true});
-const campaign = require("/models/campaign");
-const Comment = require("/models/comment");
-const middleware = require("/middleware");
+const campaign = require("../models/campaign");
+const Comment = require("../models/comment");
+const middleware = require("../middleware");
 const {orders, products} = require('../middleware/inventory');
 const { isLoggedIn, checkUserComment, isAdmin } = middleware;
 
