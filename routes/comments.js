@@ -74,7 +74,10 @@ router.post("/", isLoggedIn,function(req, res){
                //res.render('comments/share', {comment: comment, campaign: campaign});
                try {
                    let order = await orders.create('usd', comment.campaignID, comment.author.username);
+
+                   console.log(json({order}));
                    return res.status(200).json({order});
+
                    } catch (err) {
                    return res.status(500).json({error: err.message});
                     }
