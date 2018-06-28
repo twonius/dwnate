@@ -45,7 +45,7 @@ router.get("/:commentid/share", function(req,res){
 router.post("/", isLoggedIn, function(req, res){
    //lookup campaign using ID
     //console.log(req.params.id);
-    console.log('im alive');
+    console.log('im alive');/*
    campaign.findById(req.params.id, function(err, campaign){
        if(err){
            console.log(err);
@@ -74,7 +74,7 @@ router.post("/", isLoggedIn, function(req, res){
                req.flash('success', 'Created a comment!');
 
                //res.render('comments/share', {comment: comment, campaign: campaign});
-              /*
+
                try {
                    let order = await orders.create('usd', comment.campaignID, comment.author.username);
 
@@ -83,11 +83,11 @@ router.post("/", isLoggedIn, function(req, res){
 
                    } catch (err) {
                    return res.status(500).json({error: err.message});
-                    }*/
+                    }
            }
         });
        }
-   });
+   });*/
 });
 
 router.get("/:commentId/edit", isLoggedIn, checkUserComment, function(req, res){
