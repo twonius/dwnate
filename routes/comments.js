@@ -42,17 +42,17 @@ router.get("/:commentid/share", function(req,res){
 
 
 //Comments Create
-router.post("/", isLoggedIn,async function(req, res){
+router.post("/", isLoggedIn, function(req, res){
    //lookup campaign using ID
     //console.log(req.params.id);
     console.log('im alive');
-   campaign.findById(req.params.id, async function(err, campaign){
+   campaign.findById(req.params.id, function(err, campaign){
        if(err){
            console.log(err);
            res.redirect("/campaigns");
        } else {
 
-        Comment.create(req.body.comment,async function(err, comment){
+        Comment.create(req.body.comment,function(err, comment){
            if(err){
                console.log(err);
            } else {
@@ -74,6 +74,7 @@ router.post("/", isLoggedIn,async function(req, res){
                req.flash('success', 'Created a comment!');
 
                //res.render('comments/share', {comment: comment, campaign: campaign});
+              /*
                try {
                    let order = await orders.create('usd', comment.campaignID, comment.author.username);
 
@@ -82,7 +83,7 @@ router.post("/", isLoggedIn,async function(req, res){
 
                    } catch (err) {
                    return res.status(500).json({error: err.message});
-                    }
+                    }*/
            }
         });
        }
