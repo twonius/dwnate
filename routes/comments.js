@@ -45,8 +45,10 @@ router.get("/:commentid/share", function(req,res){
 router.post("/", isLoggedIn, function(req, res){
    //lookup campaign using ID
     //console.log(req.params.id);
-    console.log('im alive');/*
-   campaign.findById(req.params.id, function(err, campaign){
+    console.log('im alive');
+   campaign.findById(req.params.id, function(err, campaign) {
+    console.log(err)
+   };/*
        if(err){
            console.log(err);
            res.redirect("/campaigns");
