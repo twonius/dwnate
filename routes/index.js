@@ -6,8 +6,8 @@ var User = require("../models/user");
 
 //root route
 router.get("/", function(req, res){
-    //res.render("index");
-    res.redirect("/campaigns");
+    res.render("index");
+    //res.redirect("/landing");
 });
 
 router.get("/about_us", function(req,res){
