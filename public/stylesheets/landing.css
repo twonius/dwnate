@@ -29,9 +29,13 @@ h2 {
   color: #fff;
 }
 
+#expaliner {
+  position: relative;
+  text-align: center;
+}
+
 #explainer p {
   color: #ffff;
-  text-align: center;
   width: 90%
 }
 
