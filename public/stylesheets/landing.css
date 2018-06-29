@@ -31,11 +31,12 @@ h2 {
 
 #explainer {
     text-align: center;
+    margin: 20vh;
 }
 
 #explainer p {
   color: #ffff;
-  width: 90%
+
 }
 
 .slideshow {
