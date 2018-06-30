@@ -39,6 +39,11 @@ h2 {
 
 }
 
+#explainer li {
+  color: #ffffff;
+}
+
+
 .slideshow {
   position: fixed;
   width: 100%;
