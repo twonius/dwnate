@@ -36,6 +36,10 @@ h2 {
 
 }
 
+#explainer h2{
+  color: #ffffff;
+}
+
 #explainer p {
   color: #ffff;
   font-size: 18px;
