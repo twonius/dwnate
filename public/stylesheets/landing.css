@@ -23,6 +23,7 @@ h2 {
 
 #landing-header h1 {
   color: #fff;
+
 }
 
 #landing-header h2 {
@@ -32,15 +33,18 @@ h2 {
 #explainer {
     text-align: center;
     margin: 10vw;
+
 }
 
 #explainer p {
   color: #ffff;
+  font-size: 2vw;
 
 }
 
 #explainer li {
   color: #ffffff;
+  font-size: 4vw;
 }
 
 
