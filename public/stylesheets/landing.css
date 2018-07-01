@@ -1,5 +1,5 @@
 body {
-  background-color: #000;
+  background-color: #e0e0e0;
 }
 
 h1 {
@@ -22,12 +22,12 @@ h2 {
 }
 
 #landing-header h1 {
-  color: #fff;
+  color: #464646;
 
 }
 
 #landing-header h2 {
-  color: #fff;
+  color: #464646;
 }
 
 #explainer {
@@ -37,18 +37,18 @@ h2 {
 }
 
 #explainer h2{
-  color: #ffffff;
+  color: #464646;
 }
 
 #explainer p {
-  color: #ffff;
+  color: #464646;
   font-size: 18px;
 
 }
 
 #explainer li {
   margin: 5vw;
-  color: #ffffff;
+  color: #464646;
   font-size: 18px;
 }
 
