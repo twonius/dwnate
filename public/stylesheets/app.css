@@ -868,12 +868,12 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #explainer {
   text-align: center;
-  margin: 10vw;
+  margin: 5vw;
 
 }
 
 #explainer h2{
-
+  font-size: 40px;
 }
 
 #explainer p {
