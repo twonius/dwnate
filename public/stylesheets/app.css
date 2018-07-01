@@ -8,7 +8,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
   line-height: 1.55;
   color: #333;
-  font-size: 400;
+  font-size: 16px;
   font-family: "Raleway", Helvetica, Arial, sans-serif;
 }
 
@@ -863,4 +863,27 @@ body.mobile-nav-active #mobile-nav-toggle {
     font-size: 20px !important;
     font-weight: bold;
   }
+}
+
+
+#explainer {
+  text-align: center;
+  margin: 10vw;
+
+}
+
+#explainer h2{
+
+}
+
+#explainer p {
+
+  font-size: 18px;
+
+}
+
+#explainer li {
+  margin: 5vw;
+
+  font-size: 18px;
 }
