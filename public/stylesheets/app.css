@@ -873,7 +873,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #explainer h2{
-  font-size: 40px;
+    padding-top: 16px;
+    font-size: 40px;
 }
 
 #explainer p {
