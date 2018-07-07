@@ -876,6 +876,10 @@ body.mobile-nav-active #mobile-nav-toggle {
     padding-top: 5px;
     font-size: 40px;
 }
+#explainer h3{
+  padding-top: 0px;
+  font-size: 40px;
+}
 
 #explainer p {
 
