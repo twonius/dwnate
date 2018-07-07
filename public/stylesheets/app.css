@@ -96,11 +96,11 @@ a:hover {
   display: table;
   position: relative;
   background-image: url(/img/stock-photo-peoples-raised-fist-air-fighting-and-sunlight-effect-competition-teamwork-concept-background-683797789.jpg);
-  background-size: cover;
+  background-size: contain;
   /*padding: 150px 0;*/
   color: #fff;
   width: 100%;
-  height: 100%;
+  height: 100px;
 }
 
 .hero:after {
@@ -873,7 +873,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #explainer h2{
-    padding-top: 16px;
+    padding-top: 5px;
     font-size: 40px;
 }
 
