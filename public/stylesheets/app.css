@@ -852,8 +852,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   }
   input[type="email"]{
     width: 80%;
-
-
+    padding: 12px
   }
 }
 
