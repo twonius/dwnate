@@ -850,6 +850,11 @@ body.mobile-nav-active #mobile-nav-toggle {
   .team span.card-title {
     font-size: 12px !important;
   }
+  input[type="email"]{
+    width: 80%;
+
+
+  }
 }
 
 @media (max-width: 767px) {
