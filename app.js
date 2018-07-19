@@ -11,8 +11,10 @@ var express     = require("express"),
     User        = require("./models/user"),
     session = require("express-session"),
     seedDB      = require("./seeds"),
-    methodOverride = require("method-override");
-    Middleware = require("./middleware/index.js" )
+    methodOverride = require("method-override"),
+    Middleware = require("./middleware/index.js" ),
+    sslRedirect = require('heroku-ssl-redirect');
+
 // configure dotenv
 require('dotenv').load();
 
@@ -20,6 +22,8 @@ require('dotenv').load();
 var commentRoutes    = require("./routes/comments"),
     campaignRoutes = require("./routes/campaigns"),
     indexRoutes      = require("./routes/index")
+
+
 
 // assign mongoose promise library and connect to database
 mongoose.Promise = global.Promise;
@@ -35,6 +39,7 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride('_method'));
 app.use(cookieParser('secret'));
+app.use(sslRedirect());
 //require moment
 app.locals.moment = require('moment');
 // seedDB(); //seed the database
