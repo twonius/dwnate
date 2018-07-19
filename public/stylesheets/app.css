@@ -10,6 +10,7 @@ p {
   color: #333;
   font-size: 16px;
   font-family: "Raleway", Helvetica, Arial, sans-serif;
+  width:80%
 }
 
 h1 {
@@ -43,7 +44,7 @@ a {
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
-  color: #199EB8 
+  color: #199EB8
 }
 
 /* ==================================================
