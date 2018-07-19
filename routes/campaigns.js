@@ -34,7 +34,7 @@ function shuffle(array) {
 };
 
 //INDEX - show all campaigns
-router.get("/", function(req, res){
+router.get("/",isLoggedIn, function(req, res){
   if(req.query.search && req.xhr) {
       const regex = new RegExp(escapeRegex(req.query.search), 'gi');
       // Get all campaigns from DB
