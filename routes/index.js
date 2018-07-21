@@ -3,7 +3,7 @@ var router  = express.Router();
 var passport = require("passport");
 var User = require("../models/user");
 var middleware = require("../middleware");
-var { isLoggedIn, checkUsercampaign, checkUserComment, isAdmin, isSafe } = middleware; // destructuring assignment
+var {isLoggedIn, checkUsercampaign, checkUserComment, isAdmin, isSafe } = middleware; // destructuring assignment
 
 
 //root route
