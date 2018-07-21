@@ -25,7 +25,7 @@ router.post("/register", function(req, res){
     var newUser = new User({
         username: req.body.username,
         firstName: req.body.firstName,
-        lastName: req.body.lastName
+        lastName: req.body.lastName,
         address: {
             street1: req.body.address.street1,
             street2: req.body.address.street2,
