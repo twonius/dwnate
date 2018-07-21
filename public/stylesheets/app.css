@@ -933,3 +933,25 @@ body.mobile-nav-active #mobile-nav-toggle {
     text-align: center;
 }
 }
+
+/*=====================================
+         Placeholder
+=======================================*/
+
+.placeholder .center {
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+
+}
+
+.placeholder img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  vertical-align: middle;
+  border: 0;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  -ms-interpolation-mode: bicubic;
+}
