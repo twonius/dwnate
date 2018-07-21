@@ -8,28 +8,34 @@
                     <h3 style="font-size:16px">Must be a U.S. citizen or lawfully admitted permanent resident, not a federal contractor, and 18 years or older to register.</h3>
                     <form action="/register" method="post">
                         <div class="form-group">
-                            <input class="form-control" type="text" name="username" placeholder="username">
+                            <input class="form-control" type="text" name="username" placeholder="username" required>
                         </div>
                         <div class="form-group">
-                            <input class="form-control" type="password" name="password" placeholder="password">
+                            <input class="form-control" type="text" name="firstName" placeholder="first name" required>
                         </div>
                         <div class="form-group">
-                            <input class="form-control" type="text" name="address[street1]" placeholder="street 1">
+                            <input class="form-control" type="text" name="lastName" placeholder="last name"  required>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="password" name="password" placeholder="password"  required>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="address[street1]" placeholder="street 1"  required>
                         </div>
                         <div class="form-group">
                             <input class="form-control" type="text" name="address[street2]" placeholder="street 2">
                         </div>
                         <div class="form-group">
-                            <input class="form-control" type="text" name="address[city]" placeholder="city">
+                            <input class="form-control" type="text" name="address[city]" placeholder="city"  required>
                         </div>
                         <div class="form-group">
-                            <input class="form-control" type="text" name="address[zip]" placeholder="zip">
+                            <input class="form-control" type="text" name="address[zip]" placeholder="zip"  required>
                         </div>
                         <div class="form-group">
-                            <input class="form-control" type="text" name="profession" placeholder="profession">
+                            <input class="form-control" type="text" name="profession" placeholder="profession"  required>
                         </div>
                         <div class="form-group">
-                            <input class="form-control" type="text" name="employer" placeholder="employer">
+                            <input class="form-control" type="text" name="employer" placeholder="employer"  required>
                         </div>
                         <button class="btn btn-primary btn-lg bg-ghost btn-block">Sign Up!</button>
                     </form>
