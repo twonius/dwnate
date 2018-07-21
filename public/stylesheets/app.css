@@ -920,10 +920,9 @@ body.mobile-nav-active #mobile-nav-toggle {
          Campaign
 =======================================*/
 
-.campaign::before {
-  background-image: <%= campaign.image %>;
-  background-size: cover;
-  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-  filter: grayscale(100%);
+.campaign img {
+
+  -webkit-filter: grayscale(80%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(80%);
 
 }
