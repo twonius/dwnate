@@ -938,7 +938,7 @@ body.mobile-nav-active #mobile-nav-toggle {
          Placeholder
 =======================================*/
 
-.placeholder .center {
+.placeholder {
   margin: auto;
   padding: 10px;
   text-align: center;
