@@ -919,7 +919,19 @@ body.mobile-nav-active #mobile-nav-toggle {
 /*=====================================
          Campaign
 =======================================*/
+.campaign .container{
 
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    margin:auto;
+  
+
+
+}
 .campaign img {
 
   -webkit-filter: grayscale(70%); /* Safari 6.0 - 9.0 */
