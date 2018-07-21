@@ -74,7 +74,7 @@ router.get("/logout", function(req, res){
 });
 
 // placehodler router
-router.get("/placeholder", function(req,res){
+router.get("/placeholder", isloggedIn,function(req,res){
   res.render("placeholder");
 })
 
