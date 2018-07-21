@@ -927,8 +927,8 @@ body.mobile-nav-active #mobile-nav-toggle {
     display: table-cell;
     vertical-align: middle;
     width: 100%;
-    margin:auto;
-  
+    margin:0 auto;
+
 
 
 }
@@ -939,7 +939,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 }
 
-.campaign .center {
+.campaign .container .center {
     margin: auto;
     padding: 10px;
     text-align: center;
