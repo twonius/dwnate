@@ -938,6 +938,15 @@ body.mobile-nav-active #mobile-nav-toggle {
          Placeholder
 =======================================*/
 
+.placeholder .container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+}
+
 .placeholder h1 {
   text-align: center;
 }
@@ -955,3 +964,9 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-bottom: 10px;
   -ms-interpolation-mode: bicubic;
 }
+
+.placeholder input[type="email"]{
+    width: 40%;
+    padding: 12px;
+    text-align: center
+  }
