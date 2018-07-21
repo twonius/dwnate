@@ -108,7 +108,7 @@ router.get("/:id", function(req, res){
         //console.log(foundcampaign)
 
     //update totals
-    middleware.campaignTotals();
+    //middleware.campaignTotals();
 
         //render show template with that campaign
         res.render("campaigns/show", {campaign: foundcampaign});
