@@ -945,6 +945,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   display: table-cell;
   vertical-align: middle;
   width: 100%;
+  margin:auto;
 }
 
 .placeholder h1 {
