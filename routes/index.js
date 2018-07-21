@@ -45,7 +45,7 @@ router.post("/register", function(req, res){
         }
         passport.authenticate("local")(req, res, function(){
            req.flash("success", "Successfully Signed Up! Nice to meet you " + req.body.username);
-           res.redirect("/placeholder");
+           res.redirect("/campaigns");
         });
     });
 });
@@ -75,8 +75,7 @@ router.get("/logout", function(req, res){
 
 // placehodler router
 router.get("/placeholder", function(req,res){
-  res.render("placeholder"); 
-
+  res.render("placeholder");
 })
 
 
