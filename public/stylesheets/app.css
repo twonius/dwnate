@@ -938,11 +938,11 @@ body.mobile-nav-active #mobile-nav-toggle {
          Placeholder
 =======================================*/
 
-.placeholder {
-  margin: auto;
-  padding: 10px;
+.placeholder h1{
   text-align: center;
-
+}
+.placeholder h2{
+  text-align: center;
 }
 
 .placeholder img {
