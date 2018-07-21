@@ -926,7 +926,6 @@ body.mobile-nav-active #mobile-nav-toggle {
     position: relative;
     z-index: 1;
     text-align: center;
-    display: table-cell;
     vertical-align: middle;
     width: 100%;
     margin:0 auto;
@@ -945,6 +944,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     margin: auto;
     padding: 10px;
     text-align: center;
+    width: 100%;
 }
 }
 
