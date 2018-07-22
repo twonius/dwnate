@@ -38,7 +38,7 @@ router.get("/", function(req, res){
   if(req.query.search) {
       const regex = new RegExp(escapeRegex(req.query.search), 'gi');
       // Get all campaigns from DB
-      Campaign.find({name: regex}, function(err, allcampaigns){
+      Campaign.find({name: regex}, function(err, allCampaigns){
          if(err){
             console.log(err);
          } else {
