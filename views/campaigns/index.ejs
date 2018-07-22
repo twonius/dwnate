@@ -23,11 +23,8 @@
             <% Campaigns.forEach(function(campaign){ %>
             <div class="col-sm-3 col-xs-6">
                 <div class="card card-block">
-                    <a href="/campaigns/<%= campaign._id %>">
-                    <div class="col-sm-1">
+                  <a href="/campaigns/<%= campaign._id %>">
                     <img alt="" class="team-img" src="<%= campaign.image %>">
-                    </div>
-                    <div class="col-sm-2">
                         <div class="card-title-wrap">
                             <span class="card-title"><%= campaign.name %></span>
                         </div>
@@ -36,7 +33,6 @@
                                 <a href="/campaigns/<%= campaign._id %>" class="btn btn-primary"> more info </a>
                             </h4>
                         </div>
-                      </div>
                     </a>
                 </div>
             </div>
