@@ -899,6 +899,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     padding-top: 10px;
     font-size: 40px;
     margin-bottom: 0px;
+      color: #199EB8;
 }
 #explainer h3{
   padding-top: 5px;
@@ -924,7 +925,7 @@ body.mobile-nav-active #mobile-nav-toggle {
       height: auto;
       vertical-align: middle;
       -ms-interpolation-mode: bicubic;
-  
+
 }
 
 /*=====================================
