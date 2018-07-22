@@ -918,6 +918,15 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-size: 18px;
 }
 
+#explainer img {
+
+      width: 100%;
+      height: auto;
+      vertical-align: middle;
+      -ms-interpolation-mode: bicubic;
+  
+}
+
 /*=====================================
          Campaign
 =======================================*/
