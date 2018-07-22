@@ -21,26 +21,26 @@
     <div class="container">
         <div class="row" id="campaign-grid">
             <% Campaigns.forEach(function(campaign){ %>
-            <div class="col-sm-3 col-xs-6">
-                <!--<div class="card card-block">-->
-                  <div class="col-xs-4">
+
+                <div class="card card-block">
+
                   <a href="/campaigns/<%= campaign._id %>">
 
                     <img alt="" class="team-img" src="<%= campaign.image %>">
-                  </a>
-                  </div>
-                  <div class="col-xs-8">
+
+
+
                         <div class="card-title-wrap">
                             <span class="card-title"><%= campaign.name %></span>
                         </div>
-                        <!--<div class="team-over">
+                        <div class="team-over">
                             <h4 class="hidden-md-down">
                                 <a href="/campaigns/<%= campaign._id %>" class="btn btn-primary"> more info </a>
                             </h4>
-                        </div>-->
-                      </div>
-
-                <!--</div>-->
+                        </div>
+                  
+                    </a>
+                </div>
             </div>
             <% }); %>
         </div>
