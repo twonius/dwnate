@@ -550,6 +550,8 @@ body.mobile-nav-active #mobile-nav-toggle {
   -ms-interpolation-mode: bicubic;
   object-fit: cover;
   overflow: hidden;
+  -webkit-filter: grayscale(70%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(70%);
 }
 
 .team .card .social-nav {
