@@ -35,14 +35,14 @@ function shuffle(array) {
 
 //INDEX - show all campaigns
 router.get("/", function(req, res){
-  if(req.query.search && req.xhr) {
+  if(req.query.search) {
       const regex = new RegExp(escapeRegex(req.query.search), 'gi');
       // Get all campaigns from DB
       Campaign.find({name: regex}, function(err, allcampaigns){
          if(err){
             console.log(err);
          } else {
-            res.status(200).json(allcampaigns);
+            res.render("campaigns/index",{Campaigns: allCampaigns, page: 'Campaigns'});
          }
       });
   } else {
