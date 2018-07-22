@@ -21,7 +21,7 @@
     <div class="container">
         <div class="row" id="campaign-grid">
             <% Campaigns.forEach(function(campaign){ %>
-
+              <div class="col-sm-3 col-xs-6">
                 <div class="card card-block">
 
                   <a href="/campaigns/<%= campaign._id %>">
@@ -38,9 +38,10 @@
                                 <a href="/campaigns/<%= campaign._id %>" class="btn btn-primary"> more info </a>
                             </h4>
                         </div>
-                  
+
                     </a>
                 </div>
+              </div>
             </div>
             <% }); %>
         </div>
