@@ -1,0 +1,34 @@
+<% include ../partials/header %>
+
+<header class="jumbotron">
+    <div class="container">
+        <h1><span class="glyphicon glyphicon-circle-arrow-down"></span>DWNATE</h1>
+        <p>Money talks</p>
+        <p>
+         <form action="/campaigns" method="GET" class="form-inline" id="campaign-search">
+           <div class="search-bar">
+             <input id="search-bar" type="text" name="search" placeholder="Campaign search..." class="form-control">
+           </div>
+         </form>
+        </p>
+    </div>
+</header>
+
+<div class="row text-center flex-wrap" id="campaign-grid">
+   <% Campaigns.forEach(function(campaign){ %>
+       <div class="col-md-3 col-sm-6">
+           <div class="thumbnail">
+              <img src="<%= campaign.image %>" class="img-rounded img-responsive" style="width: 253px; height: 296px;">
+              <div class="caption">
+                  <h4><%= campaign.name %></h4>
+              </div>
+              <p>
+                  <a href="/campaigns/<%= campaign._id %>" class="btn btn-primary">More Info</a>
+              </p>
+           </div>
+       </div>
+   <% }); %>
+</div>
+
+
+<% include ../partials/footer %>
