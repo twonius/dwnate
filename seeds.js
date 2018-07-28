@@ -1,13 +1,15 @@
 var mongoose = require("mongoose");
 var campaign = require("./models/campaign");
 var Comment   = require("./models/comment");
-var data = require("data.js")
 
 var date = new Date();
 var backDate = new Date();
 backDate.setDate(date.getDate()-1);
 
-
+var data;
+$.getJSON("data.json", function(json) {
+  data = json;
+});
 
 donations =
 
