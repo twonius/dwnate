@@ -8,8 +8,8 @@ var campaignSchema = new mongoose.Schema({
    party: String,
    chamber: String,
    tenure: String,
-   link: String, 
-   primary: Number,
+   link: String,
+   primary: {type:Number,default:0},
 
    createdAt: { type: Date, default: Date.now },
    author: {
