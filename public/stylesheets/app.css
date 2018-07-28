@@ -635,6 +635,11 @@ body.mobile-nav-active #mobile-nav-toggle {
   display: block;
 }
 
+.profile h1 {
+
+  text-align: center;
+}
+
 
 /* ==================================================
   Contact Section
