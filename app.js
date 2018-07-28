@@ -42,7 +42,7 @@ app.use(cookieParser('secret'));
 app.use(sslRedirect());
 //require moment
 app.locals.moment = require('moment');
-seedDB(); //seed the database
+//seedDB(); //seed the database
 
 
 
