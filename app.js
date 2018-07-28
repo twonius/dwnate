@@ -42,8 +42,8 @@ app.use(cookieParser('secret'));
 app.use(sslRedirect());
 //require moment
 app.locals.moment = require('moment');
-// seedDB(); //seed the database
-//seedDB();
+seedDB(); //seed the database
+
 
 
 // PASSPORT CONFIGURATION

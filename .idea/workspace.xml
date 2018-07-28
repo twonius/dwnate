@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fbdb7cb7-72c7-4af1-a6e5-d5161ce43a48" name="Default" comment="fixing email box" />
+    <list default="true" id="fbdb7cb7-72c7-4af1-a6e5-d5161ce43a48" name="Default" comment="fixing email box">
+      <change beforePath="$PROJECT_DIR$/models/campaign.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/campaign.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -80,8 +82,8 @@
       <file leaf-file-name="2018-07.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../Fundamental JS/2018-07.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="60">
+              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -189,10 +191,10 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
-    <option name="width" value="1920" />
-    <option name="height" value="1053" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="303" />
+    <option name="width" value="1280" />
+    <option name="height" value="777" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -289,7 +291,7 @@
       <workItem from="1529297738251" duration="83129000" />
       <workItem from="1531966336351" duration="561000" />
       <workItem from="1531976107112" duration="1252000" />
-      <workItem from="1532570083766" duration="596000" />
+      <workItem from="1532570083766" duration="1182000" />
     </task>
     <task id="LOCAL-00125" summary="fixing email box">
       <created>1531369646811</created>
@@ -638,11 +640,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87217000" />
+    <option name="totallyTimeSpent" value="87803000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="777" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="303" width="1280" height="777" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18203124" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -1060,8 +1061,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../Fundamental JS/2018-07.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="60">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
         </state>
       </provider>
     </entry>

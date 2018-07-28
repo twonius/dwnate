@@ -3,13 +3,14 @@ var mongoose = require("mongoose");
 var campaignSchema = new mongoose.Schema({
    name: String,
    image: String,
-   description: String,
    state: String,
+   district: String,
    party: String,
    chamber: String,
+   tenure: String,
+   link: String, 
    primary: Number,
-   lat: Number,
-   long: Number,
+
    createdAt: { type: Date, default: Date.now },
    author: {
       id: {
