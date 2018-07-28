@@ -1,15 +1,13 @@
 var mongoose = require("mongoose");
 var campaign = require("./models/campaign");
 var Comment   = require("./models/comment");
+var data = require("./data.json");
 
 var date = new Date();
 var backDate = new Date();
 backDate.setDate(date.getDate()-1);
 
-var data;
-$.getJSON("data.json", function(json) {
-  data = json;
-});
+
 
 donations =
 
@@ -37,6 +35,13 @@ donations =
 
 
 function seedDB(){
+
+  // load data
+   // console.log("loading data");
+   //  var rawData = fs.readFileSync("data.json");
+   //  var data = json.parse(rawData);
+   //  console.log("load complete");
+
    //Remove all campaigns
    campaign.remove({}, function(err){
         if(err){
