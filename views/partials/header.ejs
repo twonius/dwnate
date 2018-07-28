@@ -77,12 +77,12 @@
             <li class="<%= typeof page !== 'undefined' && page === 'campaigns' ? 'active' : '' %>"><a href="/campaigns">Home</a></li>
             <li class="<%= typeof page !== 'undefined' && page === 'about us' ? 'active' : '' %>"><a href="/about_us">What We Do</a></li>
             <% if(!currentUser){ %>
-            <li class="<%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>"><a href="/login">Login</a></li>
+            <!-- <li class="<%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>"><a href="/login">Login</a></li>
             <li class="<%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %>"><a href="/register">Sign Up</a></li>
             <% } else { %>
             <li><a href="#">Signed In As <%= currentUser.username %></a></li>
             <li><a href="/logout">Logout</a></li>
-            <% } %>
+            <% } %> --> 
           </ul>
         </nav>
         <!-- #nav-menu-container -->
